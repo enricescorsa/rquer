@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R que R</title>
+  <meta name="description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R que R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="fotoenric2.png" />
+  <meta property="og:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="github-repo" content="enricescorsa/bookdown-enric" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R que R" />
+  
+  <meta name="twitter:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="twitter:image" content="fotoenric2.png" />
+
+<meta name="author" content="Enric Escorsa O’Callaghan">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="r-para-visualizar.html">
+<link rel="next" href="sumario.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R que R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#indice-de-contenidos"><i class="fa fa-check"></i><b>1.1</b> Indice de contenidos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Intro</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#manejarse-en-el-entorno-de-r"><i class="fa fa-check"></i><b>2.1</b> Manejarse en el entorno de R</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#vectores"><i class="fa fa-check"></i><b>2.3</b> Vectores</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#tablas"><i class="fa fa-check"></i><b>2.4</b> Tablas</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones"><i class="fa fa-check"></i><b>2.5</b> Funciones</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#paquetes"><i class="fa fa-check"></i><b>2.6</b> Paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-para-explorar.html"><a href="r-para-explorar.html"><i class="fa fa-check"></i><b>3</b> R para Explorar</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos"><i class="fa fa-check"></i><b>3.1</b> Leer datos</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-un-archivo"><i class="fa fa-check"></i><b>3.1.1</b> Leer datos de un archivo</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-contenidos-en-un-excel"><i class="fa fa-check"></i><b>3.1.2</b> Leer datos contenidos en un excel</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-una-pagina-web"><i class="fa fa-check"></i><b>3.1.3</b> Leer datos de una página web</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#acomodar-datos"><i class="fa fa-check"></i><b>3.2</b> Acomodar datos</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#funciones-base-en-r"><i class="fa fa-check"></i><b>3.2.1</b> Funciones base en R</a></li>
+<li class="chapter" data-level="3.2.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#paquete-dplyr"><i class="fa fa-check"></i><b>3.2.2</b> Paquete dplyr</a></li>
+<li class="chapter" data-level="3.2.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#limpiar-textos"><i class="fa fa-check"></i><b>3.2.3</b> Limpiar textos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-para-predecir.html"><a href="r-para-predecir.html"><i class="fa fa-check"></i><b>4</b> R para Predecir</a><ul>
+<li class="chapter" data-level="4.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#correlacion"><i class="fa fa-check"></i><b>4.1</b> Correlación</a></li>
+<li class="chapter" data-level="4.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion"><i class="fa fa-check"></i><b>4.2</b> Regresión</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-lineal"><i class="fa fa-check"></i><b>4.2.1</b> Regresión lineal</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-logistica"><i class="fa fa-check"></i><b>4.2.2</b> Regresión logística</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-para-predecir.html"><a href="r-para-predecir.html#proyectar-forecast"><i class="fa fa-check"></i><b>4.3</b> Proyectar (Forecast)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html"><i class="fa fa-check"></i><b>5</b> R para Visualizar</a><ul>
+<li class="chapter" data-level="5.1" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#graficos-de-dispersion"><i class="fa fa-check"></i><b>5.1</b> Gráficos de dispersión</a></li>
+<li class="chapter" data-level="5.2" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#histogramas"><i class="fa fa-check"></i><b>5.2</b> Histogramas</a></li>
+<li class="chapter" data-level="5.3" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#redes"><i class="fa fa-check"></i><b>5.3</b> Redes</a></li>
+<li class="chapter" data-level="5.4" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#mapas-geograficos"><i class="fa fa-check"></i><b>5.4</b> Mapas geográficos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-que-r.html"><a href="r-que-r.html"><i class="fa fa-check"></i><b>6</b> R que R</a><ul>
+<li class="chapter" data-level="6.1" data-path="r-que-r.html"><a href="r-que-r.html#tutoriales"><i class="fa fa-check"></i><b>6.1</b> Tutoriales</a></li>
+<li class="chapter" data-level="6.2" data-path="r-que-r.html"><a href="r-que-r.html#obtener-ayuda"><i class="fa fa-check"></i><b>6.2</b> Obtener ayuda</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sumario.html"><a href="sumario.html"><i class="fa fa-check"></i><b>7</b> Sumario</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R que R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-que-r" class="section level1">
+<h1><span class="header-section-number">Capítulo 6</span> R que R</h1>
+<p>He intentado mostrar en esta brevísima introducción a R, las funcionalidades básicas de este lenguaje de Programación estadística y algunas de las aplicaciones posibles. Esto ha sido sólo una muestra para despertar el apetito.
+Uno de los aspectos más positivos de este lenguaje es, precisamente, la activa comunidad de usuarios que existe a su entorno, gracias a la cual es muy fácil obtener soporte para problemas específicos y seguir aprendiendo mediante infinitud de recursos, muchos de ellos gratuitos.</p>
+<p>A continuación os dejo una lista de recursos para seguir aprendiendo R que R.</p>
+<div id="tutoriales" class="section level2">
+<h2><span class="header-section-number">6.1</span> Tutoriales</h2>
+<p>Algunos materiales interesantes para seguir aprendiendo son:</p>
+<ul>
+<li><p>El libro <a href="https://r4ds.had.co.nz/">R for Data Science</a> de <strong>Hadley Wickham</strong>, experto neozelandés que trabaja en RStudio. Toda una referencia actual en el desarrollo de este lenguage de programación y creador e integrador de gran cantidad de paquetes que facilitan todo el proceso analítico.</p></li>
+<li><p><a href="https://www-bcf.usc.edu/%7Egareth/ISL/">An Introduction to Statistical Learning with Applications in R (ISLR)</a> de los profesores de Stanford <strong>Trevor Hastie</strong> y <strong>Rob Tibshirani</strong>. Mucho conocimiento transmitido de un modo muy cálido y relajado.</p></li>
+<li><p><a href="http://varianceexplained.org/RData/">Variance Explained</a> de <a href="https://twitter.com/drob">David Robinson</a>
+videos cortos, super claros y explicativos.</p></li>
+<li><p>El libro <a href="http://tidytextmining.com/intro.html">Tidy Textmining</a>, escrito por <a href="https://juliasilge.com/">Julia Silge</a> y David Robinson.</p></li>
+<li><p><a href="https://www.r-bloggers.com">R-bloggers</a>, blog curado por <strong>Tal Galili</strong>, Doctor de la Universidad de Tel Aviv. Enrorme repositorio de posts de miembros de de la comunidad de R a nivel mundial.</p></li>
+<li><p><a href="https://www.twotorials.com/">twotorials</a> de
+<strong>Anthony Damico</strong> una introducción muy ágil y divertida a R (videos de 2 minutos usando R en bruto ¡sin Rstudio!).</p></li>
+<li><p><a href="http://www.datasciencecentral.com">Data Science Central</a> de <strong>Vincent Granville</strong>.</p></li>
+<li><p><a href="http://www.kdnuggets.com/">KDnuggets</a> de <strong>Gregory Piatetsky</strong>.</p></li>
+<li><p><a href="http://kirkborne.net/">Kirk Borne</a> científico de datos principal en la consultora pionera BoozAllen.</p></li>
+<li><p><a href="https://www.analyticsvidhya.com">Analytics Vidhya</a> blog de un equipo muy activo de analistas de Bombay, liderados por <strong>Kunal Jail</strong> y que son además excelentes comunicadores y están siempre a la última de los avances en análisis de datos y Machine Learning, lenguajes de programación, etc. Como la gente de Rstudio y Datacamp, también publican útiles “chuletas” o <a href="https://www.analyticsvidhya.com/blog/2017/02/top-28-cheat-sheets-for-machine-learning-data-science-probability-sql-big-data/">Cheat Sheets</a> Para principiantes pero también para usuarios más avanzados.</p></li>
+<li><p><a href="http://math.agrocampus-ouest.fr/infoglueDeliverLive/membres/Francois.Husson">François Husson</a>, análisis de datos multivariantes y técnicas de clusterización con R.</p></li>
+<li><p>Para trabajar con predicciones en series temporales es muy útil el trabajo del profesor <a href="https://www.otexts.org/fpp">Rob J Hyndman</a> de la Monash University, creador del paquete <a href="http://robjhyndman.com/software/forecast/%22">Forecast</a>.</p></li>
+</ul>
+<p>Otros recursos abiertos y gratuitos útiles son:</p>
+<ul>
+<li><p>Los excelentes materiales del curso <a href="http://cm.dce.harvard.edu/2014/01/14328/publicationListing.shtml">CSI E-109</a> del Harvard Distance Education, impartido por los porfesores de Harvard _professors <strong>Joe Blitzstein</strong>, <strong>Hanspeter Pfister</strong> y <strong>Verena Kaynig-Fittkau</strong>.</p></li>
+<li><p>Inventarios de recursos intersantes como <a href="http://datasciencemasters.org">Data Science Masters</a> de <strong>Clare Corthell</strong> de Summer.ai</p></li>
+<li><p><a href="http://learnds.com/">Learn Data Science</a> de <strong>Nitin Borwankar</strong>.</p></li>
+<li><p><a href="https://www.kaggle.com">Kaggle</a> Plataforma, red social de científicos de datos y entorno para competiciones de proyectos de minería de datos, aprendizaje automático y modelos predicitivos, creada por Anthony Goldbloom.</p></li>
+</ul>
+<p><a href="https://www.datacamp.com">Datacamp</a>, Coursera y Udacity, entre otros ponen al alcance de todos el poder iniciarse en ciencia de datos y R.</p>
+<p>Finalmente, existen numerosos blogs personales de doctorandos, <em>practitioners</em> o usuarios apasionados de R que muestran modos de analizar datos para casos específicos. También es sumamente útil encontrar <a href="http://rmarkdown.rstudio.com/r_notebooks.html"><strong>notebooks</strong></a> donde se conjugan scripts de código y explicaciones de los mismos.</p>
+</div>
+<div id="obtener-ayuda" class="section level2">
+<h2><span class="header-section-number">6.2</span> Obtener ayuda</h2>
+<p>Ya vimos que podemos obtener ayuda sobre una función o un objeto usando <code>?</code> o <code>help()</code>.
+Para acceder a la ayuda general en R podemos escribir <code>help.start()</code> o usar la pestaña <code>help</code> (si estamos en el entorno de Rstudio). También podemos usar <code>vignette()</code> para visualizar una descripción detallada de un paquete, de para qué sirve y de cómo usarlo.</p>
+<p>Cuando al ejecutar comandos nos aparece un error (mensaje de texto en rojo en la consola de R), es importante leerlo para aprender de él (¡como en la vida!).</p>
+<p>Otra gran opción que tenemos para resolver errores es buscar en la web de preguntas y respuestas <a href="https://stackoverflow.com"><strong>stackoverflow</strong></a> <a href="https://stackoverflow.com" class="uri">https://stackoverflow.com</a>.
+Si simplemente copiamos y pegamos el error que nos aparece en R en Google, es muy probable que nos dirija a stackoverflow. Y es muy probable también que en uno de sus foros alguien haya solucionado ya el problema que buscamos u otro similar que nos ayude a entender. De igual modo podemos contribuir allí y aclarar dudas a otros. Estos foros de preguntas y respuestas son, por lo general, una enorme fuente de aprendizaje y una inyección de optimismo en la humanidad.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-para-visualizar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sumario.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-rquer/edit/master/05-R_que_R.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-rquer.pdf", "bookdown-rquer.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

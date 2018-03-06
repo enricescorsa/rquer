@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R que R</title>
+  <meta name="description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R que R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="fotoenric2.png" />
+  <meta property="og:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="github-repo" content="enricescorsa/bookdown-enric" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R que R" />
+  
+  <meta name="twitter:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="twitter:image" content="fotoenric2.png" />
+
+<meta name="author" content="Enric Escorsa O’Callaghan">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="r-para-predecir.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R que R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#indice-de-contenidos"><i class="fa fa-check"></i><b>1.1</b> Indice de contenidos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Intro</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#manejarse-en-el-entorno-de-r"><i class="fa fa-check"></i><b>2.1</b> Manejarse en el entorno de R</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#vectores"><i class="fa fa-check"></i><b>2.3</b> Vectores</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#tablas"><i class="fa fa-check"></i><b>2.4</b> Tablas</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones"><i class="fa fa-check"></i><b>2.5</b> Funciones</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#paquetes"><i class="fa fa-check"></i><b>2.6</b> Paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-para-explorar.html"><a href="r-para-explorar.html"><i class="fa fa-check"></i><b>3</b> R para Explorar</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos"><i class="fa fa-check"></i><b>3.1</b> Leer datos</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-un-archivo"><i class="fa fa-check"></i><b>3.1.1</b> Leer datos de un archivo</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-contenidos-en-un-excel"><i class="fa fa-check"></i><b>3.1.2</b> Leer datos contenidos en un excel</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-una-pagina-web"><i class="fa fa-check"></i><b>3.1.3</b> Leer datos de una página web</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#acomodar-datos"><i class="fa fa-check"></i><b>3.2</b> Acomodar datos</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#funciones-base-en-r"><i class="fa fa-check"></i><b>3.2.1</b> Funciones base en R</a></li>
+<li class="chapter" data-level="3.2.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#paquete-dplyr"><i class="fa fa-check"></i><b>3.2.2</b> Paquete dplyr</a></li>
+<li class="chapter" data-level="3.2.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#limpiar-textos"><i class="fa fa-check"></i><b>3.2.3</b> Limpiar textos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-para-predecir.html"><a href="r-para-predecir.html"><i class="fa fa-check"></i><b>4</b> R para Predecir</a><ul>
+<li class="chapter" data-level="4.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#correlacion"><i class="fa fa-check"></i><b>4.1</b> Correlación</a></li>
+<li class="chapter" data-level="4.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion"><i class="fa fa-check"></i><b>4.2</b> Regresión</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-lineal"><i class="fa fa-check"></i><b>4.2.1</b> Regresión lineal</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-logistica"><i class="fa fa-check"></i><b>4.2.2</b> Regresión logística</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-para-predecir.html"><a href="r-para-predecir.html#proyectar-forecast"><i class="fa fa-check"></i><b>4.3</b> Proyectar (Forecast)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html"><i class="fa fa-check"></i><b>5</b> R para Visualizar</a><ul>
+<li class="chapter" data-level="5.1" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#graficos-de-dispersion"><i class="fa fa-check"></i><b>5.1</b> Gráficos de dispersión</a></li>
+<li class="chapter" data-level="5.2" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#histogramas"><i class="fa fa-check"></i><b>5.2</b> Histogramas</a></li>
+<li class="chapter" data-level="5.3" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#redes"><i class="fa fa-check"></i><b>5.3</b> Redes</a></li>
+<li class="chapter" data-level="5.4" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#mapas-geograficos"><i class="fa fa-check"></i><b>5.4</b> Mapas geográficos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-que-r.html"><a href="r-que-r.html"><i class="fa fa-check"></i><b>6</b> R que R</a><ul>
+<li class="chapter" data-level="6.1" data-path="r-que-r.html"><a href="r-que-r.html#tutoriales"><i class="fa fa-check"></i><b>6.1</b> Tutoriales</a></li>
+<li class="chapter" data-level="6.2" data-path="r-que-r.html"><a href="r-que-r.html#obtener-ayuda"><i class="fa fa-check"></i><b>6.2</b> Obtener ayuda</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sumario.html"><a href="sumario.html"><i class="fa fa-check"></i><b>7</b> Sumario</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R que R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-para-explorar" class="section level1">
+<h1><span class="header-section-number">Capítulo 3</span> R para Explorar</h1>
+<p><br></p>
+<blockquote>
+<p>“Aquí tengo todos los datos que demuestran incuestionablemente que los datos no demuestran NADA….”</p>
+<p>— Miguel Brieva</p>
+</blockquote>
+<p><br>
+<br></p>
+<p>La exploración de datos implica normalmente poder leer datos de fuentes y formatos diversos y acomodarlos según nos convenga. Estas tareas son, de hecho, las que suelen tomar más tiempo, de todo el proceso de análisis y asimilación de la información.</p>
+<div id="leer-datos" class="section level2">
+<h2><span class="header-section-number">3.1</span> Leer datos</h2>
+<p>Nos puede interesar leer y analizar datos de varios lados: de un archivo, una página web, una base de datos, etc.</p>
+<div id="leer-datos-de-un-archivo" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Leer datos de un archivo</h3>
+<p>Si queremos leer los datos de una tabla, por ejemplo, un archivo en formato <code>.csv</code> (valores delimitados por comas) que tenemos en nuestra carpeta o directorio, lo podemos hacer mediante el paquete <strong>readr</strong> <span class="citation">(Wickham <a href="#ref-R-readr">2017</a><a href="#ref-R-readr">a</a>)</span>.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">library</span>(readr)</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2">misdatos&lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;_bookdown_files/cromos.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb40-3" data-line-number="3">misdatos</a></code></pre></div>
+<pre><code>## # A tibble: 13 x 10
+##    Nombre   Cromos  Edad Deporte   Poblacion Pais      numerodehermanos
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                &lt;int&gt;
+##  1 Pepito       35    12 Waterpolo Barcelona España                   1
+##  2 Juanito      15    13 Futbol    Madrid    España                   3
+##  3 Carlitos      3     9 Waterpolo Ceuta     España                   2
+##  4 Pedrito      21    10 Petanca   Mallorca  España                   2
+##  5 Mariela      40    12 Futbol    Barcelona España                   4
+##  6 Vicent       21    10 Futbol    Valencia  España                   2
+##  7 Pablo         0    13 Basquet   Madrid    España                   1
+##  8 Tanita       33     8 Waterpolo Murcia    España                   0
+##  9 Antonio      26     9 Futbol    Porto     Portugal                 2
+## 10 Marc         31    10 Basquet   Andorra   Andorra                  2
+## 11 Marie        11    12 Ballet    Rennes    Francia                  3
+## 12 Anas         14    10 Futbol    Rabat     Marruecos                1
+## 13 Alfredo       9    10 Futbol    Quito     Ecuador                  4
+## # ... with 3 more variables: Juegopreferido &lt;chr&gt;,
+## #   Fechadenacimiento &lt;chr&gt;, Sexo &lt;chr&gt;</code></pre>
+<p>Nota: ojo al detalle del formato usado para indicar la ubicación del archivo: las barras son del tipo <code>/</code> (si usamos <code>\</code> no nos funcionará).</p>
+<p>De modo similar, leería los datos de un archivo <code>.txt</code> (datos no tabulares) usando la variante de la función de lectura <code>read_file</code>en mi expresión: <code>misdatos &lt;- read_file(&quot;path/miarchivo.txt&quot;)</code>.</p>
+<p>Habrá que fijarse bien y cuando sea necesario usar las distintas variantes de la función de lectura de <strong>readr</strong> según cómo estén delimitados los datos en el archivo que queremos leer: sea por comas, por punto y coma, por separador (tab) o por cualquier otro delimitador.</p>
+<p>Mírate esta chuleta de Rstudio para entender todas las opciones de importación de datos: <a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf" class="uri">https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf</a>.</p>
+<p>En caso de que no estén por defecto en la función de lectura que usamos estas opciones las deberemos especificar nosotros en los argumentos de la función; así como si tienen título o no, si queremos considerar los datos faltantes o no, etc. Siempre nos aseguraremos de que los datos se nos importan en el formato correcto.</p>
+</div>
+<div id="leer-datos-contenidos-en-un-excel" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Leer datos contenidos en un excel</h3>
+<p>Si me interesan algunos datos que tengo en un excel; los puedo seleccionar, copiar (en el portapapeles) y luego voy a R y escribo: <code>misdatos &lt;-read.delim (&quot;clipboard&quot;)</code>.</p>
+<p>Ahora cuando lo que quiero es leer archivos enteros de excel desde R, usaré -de modo similar a cómo hemos visto para leer archivos csv- paquetes como <strong>xlsx</strong> <span class="citation">(Dragulescu <a href="#ref-R-xlsx">2014</a>)</span> o <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2017</a>)</span> (paquete que es parte del conjunto integrado de paquetes <strong>Tidyverse</strong>) y sus respectivas funciones para leer los datos de las tablas de un excel: <code>read.xlsx ()</code> y <code>read_excel()</code>.</p>
+</div>
+<div id="leer-datos-de-una-pagina-web" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Leer datos de una página web</h3>
+<p>Pongamos que me interesa una tabla en csv disponible en una página web. La puedo importar también con <code>misdatos &lt;- read.csv(&quot;http://www..../archivo.csv&quot;)</code>.</p>
+<p>Otro caso seria recuperar una parte de contenido que se encuentra en formato HTML en una página web a un formato estructurado que podamos analizar. La técnica asociada a ese fin se conoce como <code>webscrapping</code>. En R hay un paquete específico para hacer webscraping llamado <strong>rvest</strong> <span class="citation">(Wickham <a href="#ref-R-rvest">2016</a>)</span>.</p>
+<p>Por ejemplo, imaginemos que soy un fan del waterpolo y quiero recuperar los resultados de la competición de la categoría de másteres que se encuentran en la página de la federación catalana de natación:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co">#cargo el paquete rvest</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="kw">library</span>(rvest)</a>
+<a class="sourceLine" id="cb42-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="co">#asigno un nombre a la URL de la página que me interesa</span></a>
+<a class="sourceLine" id="cb42-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb42-7" data-line-number="7">clasificacion_waterpolo &lt;-</a>
+<a class="sourceLine" id="cb42-8" data-line-number="8"><span class="st">  </span><span class="kw">read_html</span>(<span class="st">&quot;https://www.aquatics.cat/competicio/informacioCompeticio/2017/228/97/0&quot;</span>)</a>
+<a class="sourceLine" id="cb42-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb42-10" data-line-number="10"><span class="co">#recupero la segunda tabla que aparece en esta página indicando &quot;.[[2]]&quot; en la expresión:</span></a>
+<a class="sourceLine" id="cb42-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb42-12" data-line-number="12">clasificacion_waterpolo <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-13" data-line-number="13"><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;table&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-14" data-line-number="14"><span class="st">  </span>.[[<span class="dv">2</span>]] <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-15" data-line-number="15"><span class="st">  </span><span class="kw">html_table</span>()</a></code></pre></div>
+<pre><code>##    CLASSIFICACIÓ             CLASSIFICACIÓ CLASSIFICACIÓ CLASSIFICACIÓ
+## 1             NA                     Equip             P            PJ
+## 2              1                 CN Mataró            37            13
+## 3              2               CN Terrassa            34            13
+## 4              3          CN Molins de Rei            33            13
+## 5              4 CLUB ESPORTIU MEDITERRANI            33            13
+## 6              5            CN Sant Andreu            33            13
+## 7              6              CN Catalunya            31            13
+## 8              7                  UE Horta            31            13
+## 9              8              CN Martorell            26            13
+## 10             9           CW SANT ADRIA B            25            13
+## 11            10                  CN Badia            25            14
+## 12            11 Club Natació L&#39;Hospitalet            23            14
+## 13            12               CN Sabadell            22            13
+## 14            13    Club Natació Poble Nou            22            13
+## 15            14                 CN Premià            21            14
+## 16            15           CW SANT ADRIA A            21            13
+## 17            16              CW Can Dragó            16            13
+## 18            17    CN Atlètic-Barceloneta            15            13
+##    CLASSIFICACIÓ CLASSIFICACIÓ CLASSIFICACIÓ CLASSIFICACIÓ CLASSIFICACIÓ
+## 1             PG            PE            PP            GF            GC
+## 2             12             0             1           173            64
+## 3             10             1             2           126            67
+## 4             10             0             3           155            86
+## 5             10             0             3           124            93
+## 6             10             0             3           134            80
+## 7              9             0             4           126            91
+## 8              9             0             4           125            97
+## 9              6             1             6           105           115
+## 10             6             0             7           105           112
+## 11             5             1             8           115           121
+## 12             4             1             9            97           129
+## 13             3             4             6            79            97
+## 14             4             1             8           108           136
+## 15             3             1            10            79           123
+## 16             4             0             9            62           131
+## 17             1             1            11            54           152
+## 18             1             0            12            70           143</code></pre>
+<p>Ya tengo los resultados.</p>
+</div>
+</div>
+<div id="acomodar-datos" class="section level2">
+<h2><span class="header-section-number">3.2</span> Acomodar datos</h2>
+<p>Muy a menudo, sin embargo, los datos se nos presentan de forma bruta o imperfecta (formatos raros, valores que faltan, duplicidades, etc) o simplemente no están de la forma que queremos. Por ello es importante acomodarlos de un modo que sea adecuado o conveniente para su análisis.</p>
+<div id="funciones-base-en-r" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Funciones base en R</h3>
+<p>En R es posible usar funciones como <code>apply, lapply, sapply, tapply, etc.</code> para realizar operaciones comunes en el trabajo con matrices y tablas.</p>
+<ul>
+<li><strong>apply</strong>, permite aplicar funciones a filas o columnas de una matriz.</li>
+</ul>
+<p>Por ejemplo, aplicaríamos la funcion suma a las columnas de la matriz <code>df</code> con la expresión:
+<code>apply (df, 2, sum)</code> (aquí <code>1</code> se usa para indicar fila y <code>2</code> para indicar columna)</p>
+<ul>
+<li><strong>lapply</strong>, extrae una parte de una matriz o tabla como una lista.</li>
+</ul>
+<p>Por ejemplo, para extraer la primera fila de la tabla <code>df</code> usariamos:
+<code>lapply (df, &quot;[&quot;, 1, )</code> y para extraer la segunda columna de la tabla <code>df</code>:
+<code>lapply (df, &quot;[&quot;, , 2)</code></p>
+<ul>
+<li><strong>tapply</strong>, permite aplicar funciones a una variable, desglosada en base a otra.</li>
+</ul>
+<p>Por ejemplo, en el caso de nuestros datos, para calcular la mediana del número de cromos por sexo:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">tapply</span>(misdatos<span class="op">$</span>Cromos, misdatos<span class="op">$</span>Sexo, mean)</a></code></pre></div>
+<pre><code>##    f    m 
+## 28.0 17.5</code></pre>
+<p>Las chicas tienen de media más cromos que los chicos.</p>
+<p>Otras funciones disponibles en R base (sin necesidad de cargar paquetes adicionales) útiles para ordenar, filtrar o hacer transformaciones a nuestros datos son <code>sort()</code>, <code>subset()</code> o <code>transform()</code>.</p>
+<p>Prueba a buscar ayuda sobre estas funciones (por ejemplo escribiendo <code>?sort</code>).</p>
+</div>
+<div id="paquete-dplyr" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Paquete dplyr</h3>
+<p>Más recientemente, en el marco de herramientas integradas que facilitan acomodar datos (<a href="http://tidyverse.org/">tidyverse</a>), podemos usar varias funciones incluidas en el paquete <strong>dplyr</strong> <span class="citation">(Wickham et al. <a href="#ref-R-dplyr">2017</a>)</span>. Las más importantes son:</p>
+<ul>
+<li><p><strong>filter()</strong> que permite filtrar observaciones por sus valores.</p></li>
+<li><p><strong>arrange()</strong> para reordenar filas por variables.</p></li>
+<li><p><strong>select()</strong> para tomar variables por sus nombres.</p></li>
+<li><p><strong>mutate()</strong> para canviar variables o crear nuevas variables con funciones de variables existentes.</p></li>
+<li><p><strong>summarise()</strong> para sumarizar muchos valores en uno solo.</p></li>
+</ul>
+<p>Por ejemplo, para eliminar una columna de una tabla puedo usar <code>select()</code> y el operador negativo <code>-</code>:</p>
+<p><code>df %&gt;% select(-variable_inutil)</code> (siendo <code>variable_inutil</code> el nombre de la columna de <code>df</code> que no quiero).</p>
+<p>Para eliminar filas duplicadas puedo usar la función <code>distinct()</code>:</p>
+<p><code>df_limpia &lt;- df %&gt;% distinct()</code> elimina filas duplicadas de <code>df</code> y asigna una nueva tabla (<code>df_limpia</code>) sin ellas (<code>distinct</code> és útil por tanto para hacer recuentos de variables descartando las que aparecen más de una vez).</p>
+<p>Con <code>filter()</code> (función similar a <code>subset</code> en R base) puedo por ejemplo retener determinadas observaciones de una columna (p.ej. un determinado rango de la variable <code>Edad</code>):</p>
+<p><code>df %&gt;%  filter(Edad &gt; 18)</code></p>
+<p>Con <code>arrange()</code> (similar a <code>sort</code> en R base) ordenar datos en orden ascendente: <code>arrange(Edad)</code> o descendente : <code>arrange(desc(Edad))</code>.</p>
+<p>Con <code>mutate()</code> (similar a <code>transform</code> en R base) puedo, por ejemplo, crear una nueva variable en base a otras:</p>
+<p><code>mutate(nueva_columna = col1 + col2)</code></p>
+<p>Nota: vemos que una forma de expresar varias funciones a la vez de un modo eficiente y entendedor es usando el operador <code>%&gt;%</code> (conocido como <code>pipe</code> y disponible con los paquetes <strong>magritte</strong> y <strong>tidyverse</strong>). Consiste básicamente en que, en vez de expresar una función que opere sobre unos datos como <code>f(datos)</code>, lo puedo hacer como <code>datos %&gt;% f</code> y ello me permite ir concatenando varias funciones que quiera aplicar sobre esos mismos datos y que sea fácil de entender.</p>
+<p>Veámoslo en un ejemplo:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2">misdatos <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="st">  </span><span class="co">#hago filtro de los que no son hijos únicos</span></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(numerodehermanos <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="st">  </span><span class="co">#creo nueva variable resultante de dividir Cromos por Edad</span></a>
+<a class="sourceLine" id="cb46-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">RatioCromosEdad =</span> Cromos<span class="op">/</span>Edad) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb46-7" data-line-number="7"><span class="st">  </span><span class="co">#creo nueva variable (Edaden5) sumándole 5 años a la variable Edad</span></a>
+<a class="sourceLine" id="cb46-8" data-line-number="8"><span class="st">  </span><span class="kw">transform</span>(<span class="dt">Edaden5 =</span> Edad <span class="op">+</span><span class="st"> </span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb46-9" data-line-number="9"><span class="st">  </span><span class="co">#ordeno por numero de cromos en orden descendente</span></a>
+<a class="sourceLine" id="cb46-10" data-line-number="10"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(Cromos)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb46-11" data-line-number="11"><span class="st">  </span><span class="co">#mostrar las primeras 5 filas de la tabla resultante</span></a>
+<a class="sourceLine" id="cb46-12" data-line-number="12"><span class="st">  </span><span class="kw">head</span>(<span class="dv">5</span>) </a></code></pre></div>
+<pre><code>##    Nombre Cromos Edad Deporte Poblacion     Pais numerodehermanos
+## 1 Mariela     40   12  Futbol Barcelona   España                4
+## 2    Marc     31   10 Basquet   Andorra  Andorra                2
+## 3 Antonio     26    9  Futbol     Porto Portugal                2
+## 4 Pedrito     21   10 Petanca  Mallorca   España                2
+## 5  Vicent     21   10  Futbol  Valencia   España                2
+##   Juegopreferido Fechadenacimiento Sexo RatioCromosEdad Edaden5
+## 1         Farcry         12-4-2004    f        3.333333      17
+## 2     GuitarHero         28-9-2005    m        3.100000      15
+## 3      Minecraft         12-7-2007    m        2.888889      14
+## 4    ClashRoyale         30-5-2006    m        2.100000      15
+## 5      Minecraft          1-9-2005    m        2.100000      15</code></pre>
+</div>
+<div id="limpiar-textos" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Limpiar textos</h3>
+<p>Para limpiar textos a menudo nos interesa reemplazar carácteres de nuestros datos brutos por otros más sencillos. Para ello suelen ser muy útiles funciones como <strong>gsub</strong>. La expresamos como:</p>
+<p><code>gsub(pattern, replacement, x, ignore.case = TRUE)</code></p>
+<p>Dónde:</p>
+<ul>
+<li><p><code>pattern</code>: carácteres a cambiar.</p></li>
+<li><p><code>replacement</code>: carácteres para remplazar.</p></li>
+<li><p><code>x</code>: nuestros datos.</p></li>
+<li><p><code>ignore.case</code>: ponemos TRUE cuando queremos ignorar si el patrón es mayúsculas o minúsculas.</p></li>
+</ul>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">x &lt;-<span class="st"> &quot;danger&quot;</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="kw">gsub</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;&quot;</span>, x)</a></code></pre></div>
+<pre><code>## [1] &quot;anger&quot;</code></pre>
+<p>La función <strong>substr</strong> la podemos usar, por ejemplo, para eliminar n carácteres de un elemento. Si sólo queremos los carácteres del primero al onceavo:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">brutos &lt;-<span class="st"> &quot;loquequieroloquenoquiero&quot;</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2">limpios &lt;-<span class="st"> </span><span class="kw">substr</span>(brutos, <span class="dv">1</span>, <span class="dv">11</span>)</a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="kw">print</span>(limpios)</a></code></pre></div>
+<pre><code>## [1] &quot;loquequiero&quot;</code></pre>
+<p>Esta misma expresión la podemos opcionalmente formar junto con <code>nchar</code> para indicar el número de carácteres que no queremos (empezando en este caso por atrás):</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">brutos &lt;-<span class="st"> &quot;loquequieroloquenoquiero&quot;</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">limpios &lt;-<span class="st"> </span><span class="kw">substr</span>(brutos, <span class="dv">1</span>, <span class="kw">nchar</span> (brutos)<span class="op">-</span><span class="dv">13</span>)</a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="kw">print</span>(limpios)</a></code></pre></div>
+<pre><code>## [1] &quot;loquequiero&quot;</code></pre>
+<p>Otro paquete <strong>stringr</strong> <span class="citation">(Wickham <a href="#ref-R-stringr">2017</a><a href="#ref-R-stringr">b</a>)</span> es también útil para manipular textos; de modo similar me permite tomar sólo los últimos carácteres de algo:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">library</span> (stringr)</a></code></pre></div>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.4.3</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">brutos &lt;-<span class="st"> &quot;smart&quot;</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2">limpios &lt;-<span class="st"> </span><span class="kw">str_sub</span>(brutos,<span class="op">-</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="kw">print</span>(limpios)</a></code></pre></div>
+<pre><code>## [1] &quot;art&quot;</code></pre>
+<p>O extrer las palabras unidas por guiones bajos en una frase:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">frase &lt;-<span class="st"> &quot;el_último_de_la_fila&quot;</span></a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"> <span class="kw">str_split</span>(frase, <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;el&quot;     &quot;último&quot; &quot;de&quot;     &quot;la&quot;     &quot;fila&quot;</code></pre>
+<p>O considerar los NA que aparecen a menudo en una tabla o un vector de textos como datos faltantes y reemplazarlos por carácteres (entrecomillados) sin eliminarlos:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;una_cosa&quot;</span>, <span class="ot">NA</span>, <span class="st">&quot;otra_cosa&quot;</span>)</a>
+<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="kw">str_replace_na</span>(vector)</a></code></pre></div>
+<pre><code>## [1] &quot;una_cosa&quot;  &quot;NA&quot;        &quot;otra_cosa&quot;</code></pre>
+<p>Nota: Quizás lo estés pensando; pues sí, en R una misma cosa puede hacerse de muchos modos distintos y usando paquetes distintos. Hay algunas funciones comunes y paquetes muy usados -las que estamos tratando de mostrar aquí- pero existen innumerables funciones para resolver problemas similares y uno siempre encontrará un paquete que haga la misma cosa pero de otro modo.</p>
+
+</div>
+</div>
+</div>
+<h3>Referencias</h3>
+<div id="refs" class="references">
+<div id="ref-R-readr">
+<p>Wickham, Hadley. 2017a. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
+</div>
+<div id="ref-R-xlsx">
+<p>Dragulescu, Adrian A. 2014. <em>Xlsx: Read, Write, Format Excel 2007 and Excel 97/2000/Xp/2003 Files</em>. <a href="https://CRAN.R-project.org/package=xlsx" class="uri">https://CRAN.R-project.org/package=xlsx</a>.</p>
+</div>
+<div id="ref-R-readxl">
+<p>Wickham, Hadley, and Jennifer Bryan. 2017. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
+</div>
+<div id="ref-R-rvest">
+<p>Wickham, Hadley. 2016. <em>Rvest: Easily Harvest (Scrape) Web Pages</em>. <a href="https://CRAN.R-project.org/package=rvest" class="uri">https://CRAN.R-project.org/package=rvest</a>.</p>
+</div>
+<div id="ref-R-dplyr">
+<p>Wickham, Hadley, Romain Francois, Lionel Henry, and Kirill Müller. 2017. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
+</div>
+<div id="ref-R-stringr">
+<p>Wickham, Hadley. 2017b. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-para-predecir.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-rquer/edit/master/02-R_para_Explorar.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-rquer.pdf", "bookdown-rquer.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

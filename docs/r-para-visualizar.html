@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R que R</title>
+  <meta name="description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R que R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="fotoenric2.png" />
+  <meta property="og:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="github-repo" content="enricescorsa/bookdown-enric" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R que R" />
+  
+  <meta name="twitter:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="twitter:image" content="fotoenric2.png" />
+
+<meta name="author" content="Enric Escorsa O’Callaghan">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="r-para-predecir.html">
+<link rel="next" href="r-que-r.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R que R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#indice-de-contenidos"><i class="fa fa-check"></i><b>1.1</b> Indice de contenidos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Intro</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#manejarse-en-el-entorno-de-r"><i class="fa fa-check"></i><b>2.1</b> Manejarse en el entorno de R</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#vectores"><i class="fa fa-check"></i><b>2.3</b> Vectores</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#tablas"><i class="fa fa-check"></i><b>2.4</b> Tablas</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones"><i class="fa fa-check"></i><b>2.5</b> Funciones</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#paquetes"><i class="fa fa-check"></i><b>2.6</b> Paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-para-explorar.html"><a href="r-para-explorar.html"><i class="fa fa-check"></i><b>3</b> R para Explorar</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos"><i class="fa fa-check"></i><b>3.1</b> Leer datos</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-un-archivo"><i class="fa fa-check"></i><b>3.1.1</b> Leer datos de un archivo</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-contenidos-en-un-excel"><i class="fa fa-check"></i><b>3.1.2</b> Leer datos contenidos en un excel</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-una-pagina-web"><i class="fa fa-check"></i><b>3.1.3</b> Leer datos de una página web</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#acomodar-datos"><i class="fa fa-check"></i><b>3.2</b> Acomodar datos</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#funciones-base-en-r"><i class="fa fa-check"></i><b>3.2.1</b> Funciones base en R</a></li>
+<li class="chapter" data-level="3.2.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#paquete-dplyr"><i class="fa fa-check"></i><b>3.2.2</b> Paquete dplyr</a></li>
+<li class="chapter" data-level="3.2.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#limpiar-textos"><i class="fa fa-check"></i><b>3.2.3</b> Limpiar textos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-para-predecir.html"><a href="r-para-predecir.html"><i class="fa fa-check"></i><b>4</b> R para Predecir</a><ul>
+<li class="chapter" data-level="4.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#correlacion"><i class="fa fa-check"></i><b>4.1</b> Correlación</a></li>
+<li class="chapter" data-level="4.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion"><i class="fa fa-check"></i><b>4.2</b> Regresión</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-lineal"><i class="fa fa-check"></i><b>4.2.1</b> Regresión lineal</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-logistica"><i class="fa fa-check"></i><b>4.2.2</b> Regresión logística</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-para-predecir.html"><a href="r-para-predecir.html#proyectar-forecast"><i class="fa fa-check"></i><b>4.3</b> Proyectar (Forecast)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html"><i class="fa fa-check"></i><b>5</b> R para Visualizar</a><ul>
+<li class="chapter" data-level="5.1" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#graficos-de-dispersion"><i class="fa fa-check"></i><b>5.1</b> Gráficos de dispersión</a></li>
+<li class="chapter" data-level="5.2" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#histogramas"><i class="fa fa-check"></i><b>5.2</b> Histogramas</a></li>
+<li class="chapter" data-level="5.3" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#redes"><i class="fa fa-check"></i><b>5.3</b> Redes</a></li>
+<li class="chapter" data-level="5.4" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#mapas-geograficos"><i class="fa fa-check"></i><b>5.4</b> Mapas geográficos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-que-r.html"><a href="r-que-r.html"><i class="fa fa-check"></i><b>6</b> R que R</a><ul>
+<li class="chapter" data-level="6.1" data-path="r-que-r.html"><a href="r-que-r.html#tutoriales"><i class="fa fa-check"></i><b>6.1</b> Tutoriales</a></li>
+<li class="chapter" data-level="6.2" data-path="r-que-r.html"><a href="r-que-r.html#obtener-ayuda"><i class="fa fa-check"></i><b>6.2</b> Obtener ayuda</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sumario.html"><a href="sumario.html"><i class="fa fa-check"></i><b>7</b> Sumario</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R que R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-para-visualizar" class="section level1">
+<h1><span class="header-section-number">Capítulo 5</span> R para Visualizar</h1>
+<p><br></p>
+<blockquote>
+<p>“There is no such thing as information overload. There is only bad design….”</p>
+<p>— Edward Tufte</p>
+</blockquote>
+<p><br>
+<br></p>
+<p>En este capítulo veremos algunas opciones básicas para visualizar convenientemente nuestros datos.</p>
+<div id="graficos-de-dispersion" class="section level2">
+<h2><span class="header-section-number">5.1</span> Gráficos de dispersión</h2>
+<p>Una primera forma de visualización, útil en muchos casos son los <strong>gráficos de dispersión</strong> o <em>scatterplots</em> en inglés.
+Para generar muchos tipos de visualizaciones nos será sumamente útil el paquete <strong>ggplot2</strong> <span class="citation">(Wickham and Chang <a href="#ref-R-ggplot2">2016</a>)</span> creado por el señor <a href="http://hadley.nz/">Hadley Wickham</a>.
+Lo primero, cargémoslo:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">library</span>(ggplot2) </a></code></pre></div>
+<p>La opción más sencilla para visualizar nuestros datos es usar la función <code>qplot</code>
+dónde en los argumentos de la función pongo: la variable que quiero en el eje X, la que quiero en el eje Y, seguido de la tabla de los datos que estoy analizando (misdatos):</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-simpleqplot-1.png" width="672" /></p>
+<p>Puedo añadir una tercera variable (Nombre) para representarla por ejemplo mediante color:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos, <span class="dt">color =</span> Nombre)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-qplotcolor-1.png" width="672" /></p>
+<p>(nótese que la leyenda se me crea automáticamente).</p>
+<p>Otra utilidad conveniente a menudo a la hora de visualizar nuestros datos es hacer varias capas o particiones ( <strong>facets</strong> ) para mostrar los datos en función de determinadas variables. Veámoslos por ejemplo en función del deporte practicado.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos, <span class="dt">color =</span> Nombre, <span class="dt">facets =</span> .<span class="op">~</span>Deporte)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-qplotfacet1-1.png" width="672" /></p>
+<p>La opción <code>qplot</code> está bien para generar visualizaciones rápidas de nuestros datos, pero cuando queremos tener más control estético podemos usar la expresión <code>ggplot</code> seguida de los datos y a continuación los parámetros estéticos que deseemos (que indicamos con <code>aes()</code>), más la forma (<code>geom</code>) de los datos (sean puntos, barras u otras formas).</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb87-2" data-line-number="2">plot</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-ggplotgeom-1.png" width="672" /></p>
+<p>Así, por ejemplo puedo añadir estética de color a los puntos, bien como una constante:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;steelblue&quot;</span>)</a>
+<a class="sourceLine" id="cb88-2" data-line-number="2">plot</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-geomconstant-1.png" width="672" /></p>
+<p>o bien como una variable (dónde el color es función del Sexo):</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Sexo))</a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">plot</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-geomvariable-1.png" width="672" /></p>
+<p>O el tamaño (size) es función del número de hermanos:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">size=</span>numerodehermanos))</a>
+<a class="sourceLine" id="cb90-2" data-line-number="2">plot</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-geomvariablesize-1.png" width="672" /></p>
+</div>
+<div id="histogramas" class="section level2">
+<h2><span class="header-section-number">5.2</span> Histogramas</h2>
+<p>Para representar un histograma simplemente usariamos en este caso en nuestra expresión la forma estética <code>geom_histogram</code>.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb91-2" data-line-number="2"><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span>(numerodehermanos)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">.5</span>, <span class="dt">fill =</span> <span class="st">&quot;Steelblue&quot;</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-histogram-1.png" width="672" /></p>
+<p>Nótese que a efectos estéticos hemos representado el histograma ajustando el ancho de las barras (con <code>binwidth</code>) y rellendando de color (con <code>fill</code>).</p>
+</div>
+<div id="redes" class="section level2">
+<h2><span class="header-section-number">5.3</span> Redes</h2>
+<p>Eventualmente puede ser interesante visualizar datos que describen una red y percibir su estructura relacional.</p>
+<p>Con el paquete <strong>igraph</strong> <span class="citation">(file. <a href="#ref-R-igraph">2017</a>)</span> podemos leer una red cuya información tengamos expresada en forma de nodos y enlaces.</p>
+<p>En nuestro caso partimos de un arxivo de nodos que es una tabla de nombres de personas y un archivo de enlaces que es una tabla con tres columnas (nombre de una persona, nombre de otra persona con quien interacciona y número de cromos intercambiados).</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="co">#cargamos el paquete igraph</span></a>
+<a class="sourceLine" id="cb92-2" data-line-number="2"><span class="kw">library</span>(igraph)</a>
+<a class="sourceLine" id="cb92-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb92-4" data-line-number="4"><span class="co">#leemos archivos de nodos y de enlaces que tenemos en nuestro directorio</span></a>
+<a class="sourceLine" id="cb92-5" data-line-number="5">nodos &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_bookdown_files/grafo_nodos.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">as.is =</span> T)</a>
+<a class="sourceLine" id="cb92-6" data-line-number="6">enlaces &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_bookdown_files/grafo_enlaces.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">as.is =</span> T)</a></code></pre></div>
+<p>Ahora podemos visualizar la red con el paquete <code>igraph</code>.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="co">#trasformamos los datos en objetos de red mediante la función graph.data.frame</span></a>
+<a class="sourceLine" id="cb93-2" data-line-number="2">red &lt;-<span class="kw">graph.data.frame</span>(enlaces, <span class="dt">directed =</span> <span class="ot">TRUE</span>, <span class="dt">vertices =</span> nodos)</a>
+<a class="sourceLine" id="cb93-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb93-4" data-line-number="4"><span class="co">#representamos el grafo especificando varios criterios estéticos</span></a>
+<a class="sourceLine" id="cb93-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb93-6" data-line-number="6"><span class="kw">plot</span>(red, <span class="dt">layout =</span> layout.fruchterman.reingold, <span class="dt">vertex.size =</span> <span class="dv">9</span>, </a>
+<a class="sourceLine" id="cb93-7" data-line-number="7">     <span class="dt">vertex.label.color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="dt">vertex.label.dist =</span> <span class="fl">0.9</span>, </a>
+<a class="sourceLine" id="cb93-8" data-line-number="8">     <span class="dt">vertex.color =</span> <span class="st">&quot;Steelblue&quot;</span>, <span class="dt">vertex.frame.color =</span> <span class="st">&quot;white&quot;</span>, </a>
+<a class="sourceLine" id="cb93-9" data-line-number="9">     <span class="dt">edge.arrow.size =</span> <span class="fl">0.5</span>, <span class="dt">edge.curved =</span> <span class="dv">0</span>, <span class="dt">vertex.label.font =</span> <span class="dv">9</span>, </a>
+<a class="sourceLine" id="cb93-10" data-line-number="10">     <span class="dt">vertex.label.cex =</span> <span class="fl">0.8</span>)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-plotnetwork-1.png" width="672" /></p>
+<p>Apreciamos un grafo resultante cuyos nodos son los nombres de las personas y los enlaces los vínculos que éstas establecen (en este caso intercambio de cromos).</p>
+<p>Podemos llegar a hacer grafos mucho más sofisticados que este: reflejar varias variables en ellos, distintos layouts, aplicar conceptos de la teoría de grafos (centralidad, cercanía, intermediacion) para entenderlos mejor, etc.</p>
+<p>Nota: para aprender más acerca de representaciones de redes con R recomiendo leer los excelentes materiales al respecto de <a href="https://kateto.net/">Katya Ognyanova</a>; más recientemente <a href="https://www.data-imaginist.com/">Tomas Lin Pedersen</a> ha aumentado considerablemente las posibilidades de trabajar con grafos en R, con la creación de los paquetes integrados de manipulación y visualización de grafos <strong>ggraph</strong> <span class="citation">(Pedersen <a href="#ref-R-ggraph">2018</a><a href="#ref-R-ggraph">b</a>)</span> y <strong>tidygraph</strong> <span class="citation">(Pedersen <a href="#ref-R-tidygraph">2018</a><a href="#ref-R-tidygraph">a</a>)</span>. Si te interesan los grafos te aconsejo estar al tanto de su evolución.</p>
+</div>
+<div id="mapas-geograficos" class="section level2">
+<h2><span class="header-section-number">5.4</span> Mapas geográficos</h2>
+<p>También podemos representar en R mapas geográficos de varios modos; usamos paquetes como <strong>ggmap</strong> <span class="citation">(Kahle and Wickham <a href="#ref-R-ggmap">2016</a>)</span>, <strong>tmap</strong> <span class="citation">(Tennekes <a href="#ref-R-tmap">2017</a>)</span> para representar los mapas y luego con paquetes como por ejemplo <strong>rgdal</strong> <span class="citation">(Bivand, Keitt, and Rowlingson <a href="#ref-R-rgdal">2017</a>)</span> podemos importar perímetros geoespaciales de áreas geográficas o países (en forma de <em>shapefiles</em>) en R y localizarlos en el mapa con nuestros datos.</p>
+<p>Por ejemplo, podemos generar rápidamente un mapa de Europa con <code>tmap</code> con sólo indicar una región geográfica:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="kw">library</span>(tmap)</a>
+<a class="sourceLine" id="cb94-2" data-line-number="2"><span class="co">#el paquete contiene una tabla con datos de los países europeos </span></a>
+<a class="sourceLine" id="cb94-3" data-line-number="3"><span class="kw">data</span>(Europe)</a>
+<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="kw">qtm</span>(Europe)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-tmapeurope-1.png" width="672" /></p>
+<p>Alternativamente, con <code>ggmap</code> podríamos generar el mapa de una localización específica del siguiente modo:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="kw">library</span>(ggmap)</a>
+<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="co">#localizamos con longitud y latitud la zona que queremos</span></a>
+<a class="sourceLine" id="cb95-3" data-line-number="3">cat &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">lon =</span> <span class="fl">1.6430518</span>, <span class="dt">lat =</span> <span class="fl">41.6960344</span>)</a>
+<a class="sourceLine" id="cb95-4" data-line-number="4"><span class="co">#generamos el mapa indicando la fuente (google) y el zoom que queremos</span></a>
+<a class="sourceLine" id="cb95-5" data-line-number="5">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> cat, <span class="dt">source =</span> <span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb95-6" data-line-number="6"><span class="kw">ggmap</span>(map)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-ggmap-1.png" width="672" /></p>
+<p>Si quisieramos otro tipo de representación (maptype) y color (por ejemplo en blanco y negro) indicaríamos:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="co">#el tipo de mapa de google puede ser “roadmap”, “terrain”, “satellite” o “hybrid”</span></a>
+<a class="sourceLine" id="cb96-2" data-line-number="2">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> cat, <span class="dt">source =</span> <span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">8</span>, <span class="dt">maptype =</span> <span class="st">&quot;roadmap&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;bw&quot;</span>)</a>
+<a class="sourceLine" id="cb96-3" data-line-number="3"><span class="kw">ggmap</span>(map)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-ggmapbw-1.png" width="672" /></p>
+<p>Si ahora quiero añadir un punto en el mapa (por ejemplo mi ciudad, Barcelona):</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="co">#añado la long/lat de Barcelona</span></a>
+<a class="sourceLine" id="cb97-2" data-line-number="2"><span class="kw">ggmap</span>(map) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span> (<span class="kw">aes</span> (<span class="dt">x =</span> <span class="fl">2.1734</span>, <span class="dt">y =</span> <span class="fl">41.3851</span>),  </a>
+<a class="sourceLine" id="cb97-3" data-line-number="3">                         </a>
+<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="co">#e indico la transparencia (alpha), color y tamaño del punto</span></a>
+<a class="sourceLine" id="cb97-5" data-line-number="5"><span class="dt">alpha =</span> <span class="fl">.3</span>, <span class="dt">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-ggmapbcn-1.png" width="672" /></p>
+<p>Incluso puedo añadir datos al mapa; por ejemplo, los distritos de la ciudad:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="co">#primero encuentro las shapefiles de los distritos de Barcelona en datos abiertos:</span></a>
+<a class="sourceLine" id="cb98-2" data-line-number="2"><span class="co">#https://laura-an.carto.com/tables/shapefile_distrito_barcelona/public</span></a>
+<a class="sourceLine" id="cb98-3" data-line-number="3"><span class="co">#me las descargo en mi directorio de trabajo</span></a>
+<a class="sourceLine" id="cb98-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb98-5" data-line-number="5"><span class="co">#focalizo el mapa en Barcelona</span></a>
+<a class="sourceLine" id="cb98-6" data-line-number="6">bcn &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">lon =</span> <span class="fl">2.1734</span>, <span class="dt">lat =</span> <span class="fl">41.3851</span>)</a>
+<a class="sourceLine" id="cb98-7" data-line-number="7">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> bcn, <span class="dt">source=</span><span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">11</span>, <span class="dt">maptype =</span> <span class="st">&quot;roadmap&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;bw&quot;</span>)</a>
+<a class="sourceLine" id="cb98-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb98-9" data-line-number="9"><span class="co">#cargo el paquete rgdal para importar las shapefiles de los distritos al mapa</span></a>
+<a class="sourceLine" id="cb98-10" data-line-number="10"><span class="kw">library</span>(rgdal)</a>
+<a class="sourceLine" id="cb98-11" data-line-number="11">shapefiles&lt;-<span class="kw">readOGR</span>(<span class="dt">dsn =</span> <span class="st">&quot;_bookdown_files/shapefile_distrito_barcelona.shp&quot;</span>,</a>
+<a class="sourceLine" id="cb98-12" data-line-number="12">                    <span class="dt">layer =</span> <span class="st">&quot;shapefile_distrito_barcelona&quot;</span>) </a></code></pre></div>
+<pre><code>## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;_bookdown_files/shapefile_distrito_barcelona.shp&quot;, layer: &quot;shapefile_distrito_barcelona&quot;
+## with 10 features
+## It has 12 fields</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="co">#lo represento en el mapa:</span></a>
+<a class="sourceLine" id="cb100-2" data-line-number="2"><span class="kw">ggmap</span>(map) <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group=</span>id), </a>
+<a class="sourceLine" id="cb100-3" data-line-number="3"><span class="dt">data =</span> shapefiles, <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;orange&quot;</span>, </a>
+<a class="sourceLine" id="cb100-4" data-line-number="4"><span class="dt">alpha =</span> <span class="fl">.3</span>, <span class="dt">size =</span> <span class="fl">.2</span>)</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-bcnshp-1.png" width="672" /></p>
+
+</div>
+</div>
+<h3>Referencias</h3>
+<div id="refs" class="references">
+<div id="ref-R-ggplot2">
+<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+</div>
+<div id="ref-R-igraph">
+<p>file., See AUTHORS. 2017. <em>Igraph: Network Analysis and Visualization</em>. <a href="https://CRAN.R-project.org/package=igraph" class="uri">https://CRAN.R-project.org/package=igraph</a>.</p>
+</div>
+<div id="ref-R-ggraph">
+<p>Pedersen, Thomas Lin. 2018b. <em>An Implementation of Grammar of Graphics for Graphs and Networks</em>. <a href="https://CRAN.R-project.org/package=ggraph" class="uri">https://CRAN.R-project.org/package=ggraph</a>.</p>
+</div>
+<div id="ref-R-tidygraph">
+<p>Pedersen, Thomas Lin. 2018a. <em>A Tidy Api for Graph Manipulation</em>. <a href="https://CRAN.R-project.org/package=tidygraph" class="uri">https://CRAN.R-project.org/package=tidygraph</a>.</p>
+</div>
+<div id="ref-R-ggmap">
+<p>Kahle, David, and Hadley Wickham. 2016. <em>Ggmap: Spatial Visualization with Ggplot2</em>. <a href="https://CRAN.R-project.org/package=ggmap" class="uri">https://CRAN.R-project.org/package=ggmap</a>.</p>
+</div>
+<div id="ref-R-tmap">
+<p>Tennekes, Martijn. 2017. <em>Tmap: Thematic Maps</em>. <a href="https://CRAN.R-project.org/package=tmap" class="uri">https://CRAN.R-project.org/package=tmap</a>.</p>
+</div>
+<div id="ref-R-rgdal">
+<p>Bivand, Roger, Tim Keitt, and Barry Rowlingson. 2017. <em>Rgdal: Bindings for the Geospatial Data Abstraction Library</em>. <a href="https://CRAN.R-project.org/package=rgdal" class="uri">https://CRAN.R-project.org/package=rgdal</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-para-predecir.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-que-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-rquer/edit/master/04-R_para_Visualizar.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-rquer.pdf", "bookdown-rquer.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

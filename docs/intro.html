@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R que R</title>
+  <meta name="description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R que R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="fotoenric2.png" />
+  <meta property="og:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="github-repo" content="enricescorsa/bookdown-enric" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R que R" />
+  
+  <meta name="twitter:description" content="This is an introductory book on R programming language in Spanish written by Enric Escorsa O’Callaghan" />
+  <meta name="twitter:image" content="fotoenric2.png" />
+
+<meta name="author" content="Enric Escorsa O’Callaghan">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="r-para-explorar.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R que R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#indice-de-contenidos"><i class="fa fa-check"></i><b>1.1</b> Indice de contenidos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Intro</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#manejarse-en-el-entorno-de-r"><i class="fa fa-check"></i><b>2.1</b> Manejarse en el entorno de R</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#variables"><i class="fa fa-check"></i><b>2.2</b> Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#vectores"><i class="fa fa-check"></i><b>2.3</b> Vectores</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#tablas"><i class="fa fa-check"></i><b>2.4</b> Tablas</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#funciones"><i class="fa fa-check"></i><b>2.5</b> Funciones</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#paquetes"><i class="fa fa-check"></i><b>2.6</b> Paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-para-explorar.html"><a href="r-para-explorar.html"><i class="fa fa-check"></i><b>3</b> R para Explorar</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos"><i class="fa fa-check"></i><b>3.1</b> Leer datos</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-un-archivo"><i class="fa fa-check"></i><b>3.1.1</b> Leer datos de un archivo</a></li>
+<li class="chapter" data-level="3.1.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-contenidos-en-un-excel"><i class="fa fa-check"></i><b>3.1.2</b> Leer datos contenidos en un excel</a></li>
+<li class="chapter" data-level="3.1.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#leer-datos-de-una-pagina-web"><i class="fa fa-check"></i><b>3.1.3</b> Leer datos de una página web</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#acomodar-datos"><i class="fa fa-check"></i><b>3.2</b> Acomodar datos</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="r-para-explorar.html"><a href="r-para-explorar.html#funciones-base-en-r"><i class="fa fa-check"></i><b>3.2.1</b> Funciones base en R</a></li>
+<li class="chapter" data-level="3.2.2" data-path="r-para-explorar.html"><a href="r-para-explorar.html#paquete-dplyr"><i class="fa fa-check"></i><b>3.2.2</b> Paquete dplyr</a></li>
+<li class="chapter" data-level="3.2.3" data-path="r-para-explorar.html"><a href="r-para-explorar.html#limpiar-textos"><i class="fa fa-check"></i><b>3.2.3</b> Limpiar textos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="r-para-predecir.html"><a href="r-para-predecir.html"><i class="fa fa-check"></i><b>4</b> R para Predecir</a><ul>
+<li class="chapter" data-level="4.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#correlacion"><i class="fa fa-check"></i><b>4.1</b> Correlación</a></li>
+<li class="chapter" data-level="4.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion"><i class="fa fa-check"></i><b>4.2</b> Regresión</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-lineal"><i class="fa fa-check"></i><b>4.2.1</b> Regresión lineal</a></li>
+<li class="chapter" data-level="4.2.2" data-path="r-para-predecir.html"><a href="r-para-predecir.html#regresion-logistica"><i class="fa fa-check"></i><b>4.2.2</b> Regresión logística</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="r-para-predecir.html"><a href="r-para-predecir.html#proyectar-forecast"><i class="fa fa-check"></i><b>4.3</b> Proyectar (Forecast)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html"><i class="fa fa-check"></i><b>5</b> R para Visualizar</a><ul>
+<li class="chapter" data-level="5.1" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#graficos-de-dispersion"><i class="fa fa-check"></i><b>5.1</b> Gráficos de dispersión</a></li>
+<li class="chapter" data-level="5.2" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#histogramas"><i class="fa fa-check"></i><b>5.2</b> Histogramas</a></li>
+<li class="chapter" data-level="5.3" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#redes"><i class="fa fa-check"></i><b>5.3</b> Redes</a></li>
+<li class="chapter" data-level="5.4" data-path="r-para-visualizar.html"><a href="r-para-visualizar.html#mapas-geograficos"><i class="fa fa-check"></i><b>5.4</b> Mapas geográficos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-que-r.html"><a href="r-que-r.html"><i class="fa fa-check"></i><b>6</b> R que R</a><ul>
+<li class="chapter" data-level="6.1" data-path="r-que-r.html"><a href="r-que-r.html#tutoriales"><i class="fa fa-check"></i><b>6.1</b> Tutoriales</a></li>
+<li class="chapter" data-level="6.2" data-path="r-que-r.html"><a href="r-que-r.html#obtener-ayuda"><i class="fa fa-check"></i><b>6.2</b> Obtener ayuda</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sumario.html"><a href="sumario.html"><i class="fa fa-check"></i><b>7</b> Sumario</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R que R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Capítulo 2</span> Intro</h1>
+<p>R <span class="citation">(R Core Team <a href="#ref-R-r">2013</a>)</span> es un lenguaje de programación estadística open source, versátil y potente. Puede descargarse desde la web del proyecto <a href="https://www.r-project.org"><strong>R-project</strong></a> <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>.</p>
+<p>Una vez instalado uno puede ya empezar a usarlo directamente desde su consola, pero la opción más conveniente para trabajar con R es instalarse acto seguido el Interfaz o entorno de desarrollo integrado (IDE) desarrollado por <a href="https://www.rstudio.com"><strong>RStudio</strong></a> <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a> (también gratuito), que facilita mucho trabajar con distintos archivos, descargarse paquetes para facilitar la realización de todo tipo de funciones, generar visualizaciones y tenerlo todo ordenado y a mano.</p>
+<div id="manejarse-en-el-entorno-de-r" class="section level2">
+<h2><span class="header-section-number">2.1</span> Manejarse en el entorno de R</h2>
+<p>¿Te lo descargaste ya? ¡fantástico! ábrelo pues y una vez en la consola puedes escribir líneas de código después del símbolo <code>&gt;</code> o <em>command prompt</em> y ejecutarlas una a una dándole a <code>Enter</code>.</p>
+<p>Si pruebas a escribir una operación sencilla como <code>3 + 4</code> y lo ejecutas obtienes el resultado.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<p>¡Bien!
+También es conveniente usar la <strong>flecha hacia arriba del teclado</strong> para ir a comandos escritos previamente (y así poder recuperar cosas para no tenerlas que volver a escribir).</p>
+<p>Luego puedes guardar las líneas de código que hayas escrito en un archivo con extension <code>.R</code> para abrirlo en otra ocasión desde el mismo R -o para enviarle a un amig@ y que lo abra en el suyo- y así poder ejecutarlas todas a la vez. Del mismo modo puedes buscar en internet código que otros hayan escrito y reusarlo.
+¿no es mágico?</p>
+<p>Desde un archivo puedes poner el cursor delante de una línea y ejecutarla con <code>ctrl + Enter</code> o bien seleccionar unas cuantas líneas de código con el cursor y hacer lo mismo <code>ctrl + Enter</code> (o desde el menú hacer clic en <code>Run</code>).</p>
+<p>Con <code>Ctrl + A</code> puedes seleccionarlo todo y con <code>Ctrl + R</code> ejecutarlo todo.</p>
+<p>R distingue mayúsculas y minúsculas (algo que no conviene olvidar).</p>
+</div>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">2.2</span> Variables</h2>
+<p>En R puedo crear todo tipo de <strong>variables</strong> asignando algo a un nombre mediante <code>&lt;-</code>.</p>
+<p>Por ejemplo puedo crear una variable numérica escribiendo <code>x &lt;- 1</code> u otro tipo de variable que puede ser, por ejemplo de caracteres textuales (<em>strings</em>) escribiendo <code>z &lt;- &quot;pepito&quot;</code> Nótese que en este caso la pongo entrecomillada. Nótese, asimismo, que el nombre de las variables que creo lo asigno yo (les he llamado <code>X</code> y <code>Z</code> como podría haberles llamado <code>numerito</code> o <code>palabrita</code>).</p>
+<p>Ojo: los hay, no tan puristas con la gramática de R, que usan para asignar objetos <code>=</code> en vez de <code>&lt;-</code>. En ambos casos funciona igual.</p>
+</div>
+<div id="vectores" class="section level2">
+<h2><span class="header-section-number">2.3</span> Vectores</h2>
+<p>Un <strong>vector</strong> es un objeto de un solo tipo de datos (puede ser númerico o de caracteres o de otras variables categóricas tales como factores, pero todos los elementos deben ser del mismo tipo).</p>
+<p>Puedo crear un vector usando <code>c()</code> (combine).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 1 2</code></pre>
+<p>O también puedo crear un vector de números entre 10 y 20 usando <code>:</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">c</span>(<span class="dv">10</span><span class="op">:</span><span class="dv">20</span>)</a></code></pre></div>
+<pre><code>##  [1] 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<p>O un vector de nombres:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">c</span>(<span class="st">&quot;pepito&quot;</span>, <span class="st">&quot;grillo&quot;</span>, <span class="st">&quot;ternera&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;pepito&quot;  &quot;grillo&quot;  &quot;ternera&quot;</code></pre>
+<p>Como he hecho antes, puedo asignar un vector a una variable
+<code>x &lt;- (213:221)</code> y preguntar por sus propiedades: por ejemplo ¿qué clase de vector es? con la función <code>class()</code></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">x &lt;-<span class="st"> </span>(<span class="dv">213</span><span class="op">:</span><span class="dv">221</span>)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">class</span>(x)</a></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<p><code>X</code> es un vector de números enteros (<em>integers</em>).</p>
+<p>Nota: en R es importante tener en cuenta qué tipo de objetos manejamos, porque según qué tipo tenemos podemos hacer unas cosas u otras. Lo iremos viendo. Sigamos.
+<br></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co">#longitud (número de elementos que contiene)</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">length</span>(x)</a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<p>Contiene 9 elementos.</p>
+<p>Nota: La almohadilla <code>#</code> se usa para comentar cosas que no queremos que se ejecuten en el código (todo lo que pongamos después de ella no se ejecutará). Comentar nuestros scripts de código es útil para que otros -¡incluidos nosotros mismos en el futuro!- entiendan al leerlo qué pretendíamos hacer.</p>
+<p>Va, pongamos otra cita aquí; esta que me gusta:</p>
+<p><br></p>
+<blockquote>
+<p>“Cualquier tonto puede escribir código que un ordenador entienda. Sólo los buenos programadores escriben código que los humanos entienden.”</p>
+<p>— Martin Fowler</p>
+</blockquote>
+<p><br>
+<br></p>
+<p>Sigamos preguntando cosas a una variable; por ejemplo si es numérica:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">#¿es numérico?</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">is.numeric</span>(x) </a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Verdadero, sí es numérico.</p>
+<p>La expresión <code>x[2]</code> me dará el segundo elemento del vector <code>x</code>.</p>
+<pre><code>## [1] 214</code></pre>
+<p>Incluso puedo crear una variable nueva (<code>y</code>) que tenga los elementos del cuarto al octavo de <code>x</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">y &lt;-<span class="st"> </span>x [<span class="dv">4</span><span class="op">:</span><span class="dv">8</span>]</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">y</a></code></pre></div>
+<pre><code>## [1] 216 217 218 219 220</code></pre>
+</div>
+<div id="tablas" class="section level2">
+<h2><span class="header-section-number">2.4</span> Tablas</h2>
+<p>También puedo crear tablas mediante <code>data.frame</code> y luego ir listando las columnas de la tabla separadas por comas. Una columna sería: <code>nombre_variable=c(caso1, caso2, etc.)</code>. Una tabla con varias columnas se armaría del siguiente modo:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">df&lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">ID=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">     <span class="dt">Nombre=</span><span class="kw">c</span>(<span class="st">&quot;Pepito&quot;</span>, <span class="st">&quot;Juanito&quot;</span>, <span class="st">&quot;Carlitos&quot;</span>, <span class="st">&quot;Pedrito&quot;</span>),</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">     <span class="dt">Cromos=</span><span class="kw">c</span>(<span class="dv">35</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">21</span>), </a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">     <span class="dt">Edad=</span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">9</span>, <span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">     <span class="dt">Deporte=</span><span class="kw">c</span>(<span class="st">&quot;Waterpolo&quot;</span>, <span class="st">&quot;Futbol&quot;</span>, <span class="st">&quot;Waterpolo&quot;</span>, <span class="st">&quot;Petanca&quot;</span>))     </a>
+<a class="sourceLine" id="cb18-6" data-line-number="6">df</a></code></pre></div>
+<pre><code>##   ID   Nombre Cromos Edad   Deporte
+## 1  1   Pepito     35   12 Waterpolo
+## 2  2  Juanito     15   13    Futbol
+## 3  3 Carlitos      3    9 Waterpolo
+## 4  4  Pedrito     21   10   Petanca</code></pre>
+<p>Entonces puedo preguntar a una tabla:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co"># muéstrame la primera fila</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">df[<span class="dv">1</span>,] </a></code></pre></div>
+<pre><code>##   ID Nombre Cromos Edad   Deporte
+## 1  1 Pepito     35   12 Waterpolo</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co"># muéstrame la tercera columna</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">df[,<span class="dv">3</span>] </a></code></pre></div>
+<pre><code>## [1] 35 15  3 21</code></pre>
+<p>que también puedo expresar como <code>df[[3]]</code>.</p>
+<p>Para ver una columna de una tabla también puedo usar el nombre de la tabla, seguido del símbolo del dólar <code>$</code>, seguido del nombre de la columna que me interesa:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="co"># muéstrame la columna Edad</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">df<span class="op">$</span>Edad </a></code></pre></div>
+<pre><code>## [1] 12 13  9 10</code></pre>
+<p>Ahora quiero fijarme sólo en los cromos y la edad de Pepito y Juanito:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># filas 1 y 2, columnas 3 y 4</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">df[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">3</span><span class="op">:</span><span class="dv">4</span>] </a></code></pre></div>
+<pre><code>##   Cromos Edad
+## 1     35   12
+## 2     15   13</code></pre>
+<p>O si sólo me interesan unas filas determinadas:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="co"># las filas 1 y 3`</span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">df[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),] </a></code></pre></div>
+<pre><code>##   ID   Nombre Cromos Edad   Deporte
+## 1  1   Pepito     35   12 Waterpolo
+## 3  3 Carlitos      3    9 Waterpolo</code></pre>
+<p>Estas opciones de filtrado son útiles porque me permiten por ejemplo crear una nueva tabla limpia -llamémosle <code>df2</code>- con sólo las filas que quiero de <code>df</code> (lo haria con la expresión <code>df2 &lt;- df[c(1,3),]</code>).</p>
+<p>También puedo usar operadores:</p>
+<ul>
+<li><code>==</code> igual que;</li>
+<li><code>&gt;=</code> igual o mayor que;</li>
+<li><code>&gt;</code> mayor que;</li>
+<li><code>&amp;</code> AND;</li>
+<li><code>|</code> OR;</li>
+<li><code>!</code> NOT.</li>
+</ul>
+<p>A ver ¿quién tiene más de 20 cromos?</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">df[df<span class="op">$</span>Cromos <span class="op">&gt;</span><span class="st"> </span><span class="dv">20</span>, <span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] Pepito  Pedrito
+## Levels: Carlitos Juanito Pedrito Pepito</code></pre>
+<p>(nótese que abajo del resultado me indica que estos nombres son considerados como 4 valores distintos o niveles (<code>levels</code>); se trata, por tanto, de variables categóricas, también llamadas <code>Factores</code>)</p>
+<p>Vemos pues que los <strong>data frames</strong> son tablas formadas por vectores y/o factores de la misma longitud. Tan sólo mencionar, por ahora, que en R, existen otros tipos de tablas; por ejemplo <strong>arrays</strong> (tablas con <em>K</em> dimensiones) o <strong>matrices</strong> (array de 2 dimensiones). Otros objetos interesantes son las <strong>listas</strong> (que pueden contener cualquier objeto, por ejemplo, varios vectores diferentes). Dejemoslo aquí de momento.</p>
+</div>
+<div id="funciones" class="section level2">
+<h2><span class="header-section-number">2.5</span> Funciones</h2>
+<p>Hemos visto cómo usar funciones tales como por ejemplo <code>length()</code> para calcular el número de elementos que contiene una variable.</p>
+<p>Si quisiera cambiar el tipo de variable usaria funciones como <code>as.numeric()</code> para cambiar a variable numérica o <code>as.character()</code> para cambiar a variable de carácteres.</p>
+<p>Como vemos, una función se expresa con el nombre de la función seguida de los datos y las variables dónde queremos aplicar la función (los <code>argumentos</code>) que ponemos dentro de un paréntesis.</p>
+<p>Otras funciones útiles son:</p>
+<p><code>nrow(df)</code> me dice el numero de filas de la tabla <code>df</code>.</p>
+<p><code>ncol(df)</code> me dice el numero de columnas de la tabla <code>df</code>.</p>
+<p>Alternativamente, puedo usar la función <code>dim()</code> para preguntar por ambas dimensiones (filas y columnas):</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">dim</span>(df)</a></code></pre></div>
+<pre><code>## [1] 4 5</code></pre>
+<p>Con <code>dim</code> nos hemos informado de que la tabla <code>df</code> tiene 4 filas y 5 columnas.</p>
+<p><code>summary(df)</code> me sirve para obtener un descripción de los principales parámetros estadisticos de <code>df</code>:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">summary</span>(df)</a></code></pre></div>
+<pre><code>##        ID            Nombre      Cromos          Edad            Deporte 
+##  Min.   :1.00   Carlitos:1   Min.   : 3.0   Min.   : 9.00   Futbol   :1  
+##  1st Qu.:1.75   Juanito :1   1st Qu.:12.0   1st Qu.: 9.75   Petanca  :1  
+##  Median :2.50   Pedrito :1   Median :18.0   Median :11.00   Waterpolo:2  
+##  Mean   :2.50   Pepito  :1   Mean   :18.5   Mean   :11.00                
+##  3rd Qu.:3.25                3rd Qu.:24.5   3rd Qu.:12.25                
+##  Max.   :4.00                Max.   :35.0   Max.   :13.00</code></pre>
+<p><code>head()</code> me permite ver las primeras 6 filas de una tabla.</p>
+<p><code>tail()</code> las 6 últimas.</p>
+<p>Para obtener la mediana de Edad (cuarta columna en este caso) de <code>df</code> podriamos hacer:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">mean</span>(df[,<span class="dv">4</span>])</a></code></pre></div>
+<pre><code>## [1] 11</code></pre>
+<p>Para repetir algo un número de veces, uso <code>rep()</code>:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">rep</span>(<span class="st">&quot;algo&quot;</span>, <span class="dt">times=</span><span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;algo&quot; &quot;algo&quot; &quot;algo&quot;</code></pre>
+<p>Nota: Por defecto R transforma los carácteres de una tabla en factores (categorias) al leerla; esto puede causar cierta confusión porque hay casos, por ejemplo, en que el texto de una columna sí queremos que se entienda como una categoria (p.ej. hombre/mujer, región, tipología, etc.), pero otras veces podemos querer importar el texto como tal sin categorizarlo. Esto lo podemos controlar con el argumento <code>stringsAsFactors</code>; si queremos que nuestros valores sigan siendo carácteres y no queremos que se nos cambien a factores, lo debemos indicar específicamente con <code>stringsAsFactors = False</code>.
+(muchos errores en R se deben a no tener claro qué tipo datos tratamos).</p>
+<p><br>
+<br>
+<strong>IMPORTANTE</strong>:
+<br>
+Para <strong>obtener Ayuda</strong> sobre una función -por ejemplo sobre <code>lm</code>- puedo hacer <code>?lm</code>, <code>help(lm)</code> o <code>help (&quot;lm&quot;)</code> y me aparecerá la ayuda en el visor del entorno de R.</p>
+<p>También puede ser conveniente buscar ejemplos de esa función con <code>example (lm)</code>.</p>
+<p>(En el capítulo <a href="r-que-r.html#r-que-r">6</a> se muestran varios recursos y se explica un poco más acerca de cómo obtener ayuda en R).</p>
+</div>
+<div id="paquetes" class="section level2">
+<h2><span class="header-section-number">2.6</span> Paquetes</h2>
+<p>Cuando uno crea en R una serie de funciones para hacer algo, lo puede guardar como un <strong>paquete</strong> para que otros puedan reusarlo. Los conceptos de reutilización y reproducibilidad en un lenguaje de acceso abierto como R son sumamente importantes.
+Hay infinidad de paquetes disponibles que podemos utilizar para un sinfín de aplicaciones. Ante un problema analítico específico que debamos resolver, es muy probable que exista ya un paquete que resuelva ese mismo problema en el repositorio oficial de R, llamado <a href="https://cran.r-project.org/">CRAN</a> o bien en otro repositorio importante de paquetes -más dedicado a tratamientos bioestadísticos- llamado <a href="https://www.bioconductor.org/">Bioconductor</a>.</p>
+<p>Para usar un paquete en R, debo primero tenerlo instalado.
+Lo hago escribiendo:</p>
+<p><code>install.packages(&quot;nombre_del_paquete&quot;)</code></p>
+<p>y luego puedo cargarlo en cada sesión con:</p>
+<p><code>library(nombre_del_paquete)</code></p>
+
+</div>
+</div>
+<h3>Referencias</h3>
+<div id="refs" class="references">
+<div id="ref-R-r">
+<p>R Core Team. 2013. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-para-explorar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-rquer/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-rquer.pdf", "bookdown-rquer.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
