@@ -244,7 +244,7 @@ consola, pero la opción más conveniente para trabajar con R es
 instalarse acto seguido el Interfaz o entorno de desarrollo integrado
 (IDE) desarrollado por \href{https://www.rstudio.com}{\textbf{RStudio}}
 \url{https://www.rstudio.com} (también gratuito), que facilita mucho
-trabajar con distintos archivos, descargarse paquetes para facilitar la
+trabajar con distintos archivos, descargarse paquetes que permiten la
 realización de todo tipo de funciones, generar visualizaciones y tenerlo
 todo ordenado y a mano.
 
@@ -447,11 +447,11 @@ varias columnas se armaría del siguiente modo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df<-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{( }\DataTypeTok{ID=}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{,}
-     \DataTypeTok{Nombre=}\KeywordTok{c}\NormalTok{(}\StringTok{"Pepito"}\NormalTok{, }\StringTok{"Juanito"}\NormalTok{, }\StringTok{"Carlitos"}\NormalTok{, }\StringTok{"Pedrito"}\NormalTok{),}
-     \DataTypeTok{Cromos=}\KeywordTok{c}\NormalTok{(}\DecValTok{35}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{21}\NormalTok{), }
-     \DataTypeTok{Edad=}\KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{),}
-     \DataTypeTok{Deporte=}\KeywordTok{c}\NormalTok{(}\StringTok{"Waterpolo"}\NormalTok{, }\StringTok{"Futbol"}\NormalTok{, }\StringTok{"Waterpolo"}\NormalTok{, }\StringTok{"Petanca"}\NormalTok{))     }
+\NormalTok{df<-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{( }\DataTypeTok{ID =} \DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{,}
+     \DataTypeTok{Nombre =} \KeywordTok{c}\NormalTok{(}\StringTok{"Pepito"}\NormalTok{, }\StringTok{"Juanito"}\NormalTok{, }\StringTok{"Carlitos"}\NormalTok{, }\StringTok{"Pedrito"}\NormalTok{),}
+     \DataTypeTok{Cromos =} \KeywordTok{c}\NormalTok{(}\DecValTok{35}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{21}\NormalTok{), }
+     \DataTypeTok{Edad =} \KeywordTok{c}\NormalTok{(}\DecValTok{12}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{10}\NormalTok{),}
+     \DataTypeTok{Deporte =} \KeywordTok{c}\NormalTok{(}\StringTok{"Waterpolo"}\NormalTok{, }\StringTok{"Futbol"}\NormalTok{, }\StringTok{"Waterpolo"}\NormalTok{, }\StringTok{"Petanca"}\NormalTok{))     }
 \NormalTok{df}
 \end{Highlighting}
 \end{Shaded}
@@ -649,7 +649,7 @@ Para obtener la mediana de Edad (cuarta columna en este caso) de
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(df[,}\DecValTok{4}\NormalTok{])}
+\KeywordTok{mean}\NormalTok{(df[, }\DecValTok{4}\NormalTok{])}
 \end{Highlighting}
 \end{Shaded}
 
@@ -661,7 +661,7 @@ Para repetir algo un número de veces, uso \texttt{rep()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{rep}\NormalTok{(}\StringTok{"algo"}\NormalTok{, }\DataTypeTok{times=}\DecValTok{3}\NormalTok{)}
+\KeywordTok{rep}\NormalTok{(}\StringTok{"algo"}\NormalTok{, }\DataTypeTok{times =} \DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -682,14 +682,14 @@ errores en R se deben a no tener claro qué tipo datos tratamos).
 
  \textbf{IMPORTANTE}: Para \textbf{obtener Ayuda} sobre una función -por
 ejemplo sobre \texttt{lm}- puedo hacer \texttt{?lm}, \texttt{help(lm)} o
-\texttt{help\ ("lm")} y me aparecerá la ayuda en el visor del entorno de
+\texttt{help("lm")} y me aparecerá la ayuda en el visor del entorno de
 R.
 
 También puede ser conveniente buscar ejemplos de esa función con
 \texttt{example\ (lm)}.
 
 (En el capítulo \ref{r-que-r} se muestran varios recursos y se explica
-un poco más acerca de cómo obtener ayuda en R).
+un poco más en detalle cómo obtener ayuda en R).
 
 \hypertarget{paquetes}{%
 \section{Paquetes}\label{paquetes}}
@@ -747,7 +747,7 @@ nuestra carpeta o directorio, lo podemos hacer mediante el paquete
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(readr)}
-\NormalTok{misdatos<-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\StringTok{"_bookdown_files/cromos.csv"}\NormalTok{)}
+\NormalTok{misdatos <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\StringTok{"_bookdown_files/cromos.csv"}\NormalTok{)}
 \NormalTok{misdatos}
 \end{Highlighting}
 \end{Shaded}
@@ -803,7 +803,7 @@ excel}\label{leer-datos-contenidos-en-un-excel}}
 
 Si me interesan algunos datos que tengo en un excel; los puedo
 seleccionar, copiar (en el portapapeles) y luego voy a R y escribo:
-\texttt{misdatos\ \textless{}-read.delim\ ("clipboard")}.
+\texttt{misdatos\ \textless{}-\ read.delim\ ("clipboard")}.
 
 Ahora cuando lo que quiero es leer archivos enteros de excel desde R,
 usaré -de modo similar a cómo hemos visto para leer archivos csv-
@@ -834,16 +834,11 @@ encuentran en la página de la federación catalana de natación:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{#cargo el paquete rvest}
-
 \KeywordTok{library}\NormalTok{(rvest)}
-
 \CommentTok{#asigno un nombre a la URL de la página que me interesa}
-
 \NormalTok{clasificacion_waterpolo <-}
 \StringTok{  }\KeywordTok{read_html}\NormalTok{(}\StringTok{"https://www.aquatics.cat/competicio/informacioCompeticio/2017/228/97/0"}\NormalTok{)}
-
 \CommentTok{#recupero la segunda tabla que aparece en esta página indicando ".[[2]]" en la expresión:}
-
 \NormalTok{clasificacion_waterpolo }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{html_nodes}\NormalTok{(}\StringTok{"table"}\NormalTok{) }\OperatorTok{%>%}
 \StringTok{  }\NormalTok{.[[}\DecValTok{2}\NormalTok{]] }\OperatorTok{%>%}
@@ -1337,8 +1332,8 @@ ser chica en función del número de cromos que tiene una persona.
 \CommentTok{#creo la variable Es_Chica}
 \StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Es_chica =} \KeywordTok{as.numeric}\NormalTok{(Sexo }\OperatorTok{==}\StringTok{ "f"}\NormalTok{))}
 \CommentTok{#uso geom_smooth para definir la curva de tendencia de la regresión logística}
-\NormalTok{regresion_logistica<-}\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data=}\NormalTok{ misdatos,}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Cromos,}\DataTypeTok{y =}\NormalTok{ Es_chica)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method=}\StringTok{"glm"}\NormalTok{, }\DataTypeTok{method.args =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{family =} \StringTok{"binomial"}\NormalTok{)) }\OperatorTok{+}
+\NormalTok{regresion_logistica <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ misdatos, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Cromos,}\DataTypeTok{y =}\NormalTok{ Es_chica)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"glm"}\NormalTok{, }\DataTypeTok{method.args =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{family =} \StringTok{"binomial"}\NormalTok{)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"¿Es chica? 0(No) -1(Sí)"}\NormalTok{)}
 \NormalTok{regresion_logistica}
 \end{Highlighting}
@@ -1423,7 +1418,7 @@ empieza por cero.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(series, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{35000}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(series, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{35000}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1546,7 +1541,7 @@ o bien como una variable (dónde el color es función del Sexo):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(misdatos, }\KeywordTok{aes}\NormalTok{ (Cromos, Edad)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color=}\NormalTok{Sexo))}
+\NormalTok{plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(misdatos, }\KeywordTok{aes}\NormalTok{ (Cromos, Edad)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color =}\NormalTok{ Sexo))}
 \NormalTok{plot}
 \end{Highlighting}
 \end{Shaded}
@@ -1557,12 +1552,24 @@ O el tamaño (size) es función del número de hermanos:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(misdatos, }\KeywordTok{aes}\NormalTok{ (Cromos, Edad)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{size=}\NormalTok{numerodehermanos))}
+\NormalTok{plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(misdatos, }\KeywordTok{aes}\NormalTok{ (Cromos, Edad)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{size =}\NormalTok{ numerodehermanos))}
 \NormalTok{plot}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{bookdown-rquer_files/figure-latex/chunk-geomvariablesize-1.pdf}
+
+O ambos color y tamaño son función del sexo y del número de hermanos
+respectivamente y además la forma es función del Deporte practicado:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(misdatos, }\KeywordTok{aes}\NormalTok{ (Cromos, Edad)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color =}\NormalTok{ Sexo, }\DataTypeTok{size =}\NormalTok{ numerodehermanos, }\DataTypeTok{shape =}\NormalTok{ Deporte))}
+\NormalTok{plot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bookdown-rquer_files/figure-latex/chunk-geomvariablesizecolor-1.pdf}
 
 \hypertarget{histogramas}{%
 \section{Histogramas}\label{histogramas}}
@@ -1614,7 +1621,7 @@ Ahora podemos visualizar la red con el paquete \texttt{igraph}.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{#trasformamos los datos en objetos de red mediante la función graph.data.frame}
-\NormalTok{red <-}\KeywordTok{graph.data.frame}\NormalTok{(enlaces, }\DataTypeTok{directed =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{vertices =}\NormalTok{ nodos)}
+\NormalTok{red <-}\StringTok{ }\KeywordTok{graph.data.frame}\NormalTok{(enlaces, }\DataTypeTok{directed =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{vertices =}\NormalTok{ nodos)}
 
 \CommentTok{#representamos el grafo especificando varios criterios estéticos}
 
@@ -1730,7 +1737,7 @@ ciudad:
 
 \CommentTok{#cargo el paquete rgdal para importar las shapefiles de los distritos al mapa}
 \KeywordTok{library}\NormalTok{(rgdal)}
-\NormalTok{shapefiles<-}\KeywordTok{readOGR}\NormalTok{(}\DataTypeTok{dsn =} \StringTok{"_bookdown_files/shapefile_distrito_barcelona.shp"}\NormalTok{,}
+\NormalTok{shapefiles <-}\StringTok{ }\KeywordTok{readOGR}\NormalTok{(}\DataTypeTok{dsn =} \StringTok{"_bookdown_files/shapefile_distrito_barcelona.shp"}\NormalTok{,}
                     \DataTypeTok{layer =} \StringTok{"shapefile_distrito_barcelona"}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
@@ -1787,12 +1794,12 @@ Algunos materiales interesantes para seguir aprendiendo son:
   conocimiento transmitido de un modo muy cálido y relajado.
 \item
   \href{http://varianceexplained.org/RData/}{Variance Explained} de
-  \href{https://twitter.com/drob}{David Robinson} videos cortos, super
-  claros y explicativos.
+  \href{https://twitter.com/drob}{\textbf{David Robinson}} videos
+  cortos, super claros y explicativos.
 \item
   El libro \href{http://tidytextmining.com/intro.html}{Tidy Textmining},
-  escrito por \href{https://juliasilge.com/}{Julia Silge} y David
-  Robinson.
+  escrito por \href{https://juliasilge.com/}{\textbf{Julia Silge}} y
+  David Robinson.
 \item
   \href{https://www.r-bloggers.com}{R-bloggers}, blog curado por
   \textbf{Tal Galili}, Doctor de la Universidad de Tel Aviv. Enrorme

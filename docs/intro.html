@@ -196,7 +196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Capítulo 2</span> Intro</h1>
 <p>R <span class="citation">(R Core Team <a href="#ref-R-r">2013</a>)</span> es un lenguaje de programación estadística open source, versátil y potente. Puede descargarse desde la web del proyecto <a href="https://www.r-project.org"><strong>R-project</strong></a> <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>.</p>
-<p>Una vez instalado uno puede ya empezar a usarlo directamente desde su consola, pero la opción más conveniente para trabajar con R es instalarse acto seguido el Interfaz o entorno de desarrollo integrado (IDE) desarrollado por <a href="https://www.rstudio.com"><strong>RStudio</strong></a> <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a> (también gratuito), que facilita mucho trabajar con distintos archivos, descargarse paquetes para facilitar la realización de todo tipo de funciones, generar visualizaciones y tenerlo todo ordenado y a mano.</p>
+<p>Una vez instalado uno puede ya empezar a usarlo directamente desde su consola, pero la opción más conveniente para trabajar con R es instalarse acto seguido el Interfaz o entorno de desarrollo integrado (IDE) desarrollado por <a href="https://www.rstudio.com"><strong>RStudio</strong></a> <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a> (también gratuito), que facilita mucho trabajar con distintos archivos, descargarse paquetes que permiten la realización de todo tipo de funciones, generar visualizaciones y tenerlo todo ordenado y a mano.</p>
 <div id="manejarse-en-el-entorno-de-r" class="section level2">
 <h2><span class="header-section-number">2.1</span> Manejarse en el entorno de R</h2>
 <p>¿Te lo descargaste ya? ¡fantástico! ábrelo pues y una vez en la consola puedes escribir líneas de código después del símbolo <code>&gt;</code> o <em>command prompt</em> y ejecutarlas una a una dándole a <code>Enter</code>.</p>
@@ -265,11 +265,11 @@ También es conveniente usar la <strong>flecha hacia arriba del teclado</strong>
 <div id="tablas" class="section level2">
 <h2><span class="header-section-number">2.4</span> Tablas</h2>
 <p>También puedo crear tablas mediante <code>data.frame</code> y luego ir listando las columnas de la tabla separadas por comas. Una columna sería: <code>nombre_variable=c(caso1, caso2, etc.)</code>. Una tabla con varias columnas se armaría del siguiente modo:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">df&lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">ID=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2">     <span class="dt">Nombre=</span><span class="kw">c</span>(<span class="st">&quot;Pepito&quot;</span>, <span class="st">&quot;Juanito&quot;</span>, <span class="st">&quot;Carlitos&quot;</span>, <span class="st">&quot;Pedrito&quot;</span>),</a>
-<a class="sourceLine" id="cb18-3" data-line-number="3">     <span class="dt">Cromos=</span><span class="kw">c</span>(<span class="dv">35</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">21</span>), </a>
-<a class="sourceLine" id="cb18-4" data-line-number="4">     <span class="dt">Edad=</span><span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">9</span>, <span class="dv">10</span>),</a>
-<a class="sourceLine" id="cb18-5" data-line-number="5">     <span class="dt">Deporte=</span><span class="kw">c</span>(<span class="st">&quot;Waterpolo&quot;</span>, <span class="st">&quot;Futbol&quot;</span>, <span class="st">&quot;Waterpolo&quot;</span>, <span class="st">&quot;Petanca&quot;</span>))     </a>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">df&lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="dt">ID =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">     <span class="dt">Nombre =</span> <span class="kw">c</span>(<span class="st">&quot;Pepito&quot;</span>, <span class="st">&quot;Juanito&quot;</span>, <span class="st">&quot;Carlitos&quot;</span>, <span class="st">&quot;Pedrito&quot;</span>),</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">     <span class="dt">Cromos =</span> <span class="kw">c</span>(<span class="dv">35</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">21</span>), </a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">     <span class="dt">Edad =</span> <span class="kw">c</span>(<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">9</span>, <span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">     <span class="dt">Deporte =</span> <span class="kw">c</span>(<span class="st">&quot;Waterpolo&quot;</span>, <span class="st">&quot;Futbol&quot;</span>, <span class="st">&quot;Waterpolo&quot;</span>, <span class="st">&quot;Petanca&quot;</span>))     </a>
 <a class="sourceLine" id="cb18-6" data-line-number="6">df</a></code></pre></div>
 <pre><code>##   ID   Nombre Cromos Edad   Deporte
 ## 1  1   Pepito     35   12 Waterpolo
@@ -342,10 +342,10 @@ También es conveniente usar la <strong>flecha hacia arriba del teclado</strong>
 <p><code>head()</code> me permite ver las primeras 6 filas de una tabla.</p>
 <p><code>tail()</code> las 6 últimas.</p>
 <p>Para obtener la mediana de Edad (cuarta columna en este caso) de <code>df</code> podriamos hacer:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">mean</span>(df[,<span class="dv">4</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">mean</span>(df[, <span class="dv">4</span>])</a></code></pre></div>
 <pre><code>## [1] 11</code></pre>
 <p>Para repetir algo un número de veces, uso <code>rep()</code>:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">rep</span>(<span class="st">&quot;algo&quot;</span>, <span class="dt">times=</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">rep</span>(<span class="st">&quot;algo&quot;</span>, <span class="dt">times =</span> <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;algo&quot; &quot;algo&quot; &quot;algo&quot;</code></pre>
 <p>Nota: Por defecto R transforma los carácteres de una tabla en factores (categorias) al leerla; esto puede causar cierta confusión porque hay casos, por ejemplo, en que el texto de una columna sí queremos que se entienda como una categoria (p.ej. hombre/mujer, región, tipología, etc.), pero otras veces podemos querer importar el texto como tal sin categorizarlo. Esto lo podemos controlar con el argumento <code>stringsAsFactors</code>; si queremos que nuestros valores sigan siendo carácteres y no queremos que se nos cambien a factores, lo debemos indicar específicamente con <code>stringsAsFactors = False</code>.
 (muchos errores en R se deben a no tener claro qué tipo datos tratamos).</p>
@@ -353,9 +353,9 @@ También es conveniente usar la <strong>flecha hacia arriba del teclado</strong>
 <br>
 <strong>IMPORTANTE</strong>:
 <br>
-Para <strong>obtener Ayuda</strong> sobre una función -por ejemplo sobre <code>lm</code>- puedo hacer <code>?lm</code>, <code>help(lm)</code> o <code>help (&quot;lm&quot;)</code> y me aparecerá la ayuda en el visor del entorno de R.</p>
+Para <strong>obtener Ayuda</strong> sobre una función -por ejemplo sobre <code>lm</code>- puedo hacer <code>?lm</code>, <code>help(lm)</code> o <code>help(&quot;lm&quot;)</code> y me aparecerá la ayuda en el visor del entorno de R.</p>
 <p>También puede ser conveniente buscar ejemplos de esa función con <code>example (lm)</code>.</p>
-<p>(En el capítulo <a href="r-que-r.html#r-que-r">6</a> se muestran varios recursos y se explica un poco más acerca de cómo obtener ayuda en R).</p>
+<p>(En el capítulo <a href="r-que-r.html#r-que-r">6</a> se muestran varios recursos y se explica un poco más en detalle cómo obtener ayuda en R).</p>
 </div>
 <div id="paquetes" class="section level2">
 <h2><span class="header-section-number">2.6</span> Paquetes</h2>

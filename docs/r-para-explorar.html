@@ -210,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">3.1.1</span> Leer datos de un archivo</h3>
 <p>Si queremos leer los datos de una tabla, por ejemplo, un archivo en formato <code>.csv</code> (valores delimitados por comas) que tenemos en nuestra carpeta o directorio, lo podemos hacer mediante el paquete <strong>readr</strong> <span class="citation">(Wickham <a href="#ref-R-readr">2017</a><a href="#ref-R-readr">a</a>)</span>.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">library</span>(readr)</a>
-<a class="sourceLine" id="cb40-2" data-line-number="2">misdatos&lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;_bookdown_files/cromos.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2">misdatos &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;_bookdown_files/cromos.csv&quot;</span>)</a>
 <a class="sourceLine" id="cb40-3" data-line-number="3">misdatos</a></code></pre></div>
 <pre><code>## # A tibble: 13 x 10
 ##    Nombre   Cromos  Edad Deporte   Poblacion Pais      numerodehermanos
@@ -238,7 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="leer-datos-contenidos-en-un-excel" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Leer datos contenidos en un excel</h3>
-<p>Si me interesan algunos datos que tengo en un excel; los puedo seleccionar, copiar (en el portapapeles) y luego voy a R y escribo: <code>misdatos &lt;-read.delim (&quot;clipboard&quot;)</code>.</p>
+<p>Si me interesan algunos datos que tengo en un excel; los puedo seleccionar, copiar (en el portapapeles) y luego voy a R y escribo: <code>misdatos &lt;- read.delim (&quot;clipboard&quot;)</code>.</p>
 <p>Ahora cuando lo que quiero es leer archivos enteros de excel desde R, usaré -de modo similar a cómo hemos visto para leer archivos csv- paquetes como <strong>xlsx</strong> <span class="citation">(Dragulescu <a href="#ref-R-xlsx">2014</a>)</span> o <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2017</a>)</span> (paquete que es parte del conjunto integrado de paquetes <strong>Tidyverse</strong>) y sus respectivas funciones para leer los datos de las tablas de un excel: <code>read.xlsx ()</code> y <code>read_excel()</code>.</p>
 </div>
 <div id="leer-datos-de-una-pagina-web" class="section level3">
@@ -247,20 +247,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Otro caso seria recuperar una parte de contenido que se encuentra en formato HTML en una página web a un formato estructurado que podamos analizar. La técnica asociada a ese fin se conoce como <code>webscrapping</code>. En R hay un paquete específico para hacer webscraping llamado <strong>rvest</strong> <span class="citation">(Wickham <a href="#ref-R-rvest">2016</a>)</span>.</p>
 <p>Por ejemplo, imaginemos que soy un fan del waterpolo y quiero recuperar los resultados de la competición de la categoría de másteres que se encuentran en la página de la federación catalana de natación:</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co">#cargo el paquete rvest</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="kw">library</span>(rvest)</a>
-<a class="sourceLine" id="cb42-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="co">#asigno un nombre a la URL de la página que me interesa</span></a>
-<a class="sourceLine" id="cb42-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb42-7" data-line-number="7">clasificacion_waterpolo &lt;-</a>
-<a class="sourceLine" id="cb42-8" data-line-number="8"><span class="st">  </span><span class="kw">read_html</span>(<span class="st">&quot;https://www.aquatics.cat/competicio/informacioCompeticio/2017/228/97/0&quot;</span>)</a>
-<a class="sourceLine" id="cb42-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb42-10" data-line-number="10"><span class="co">#recupero la segunda tabla que aparece en esta página indicando &quot;.[[2]]&quot; en la expresión:</span></a>
-<a class="sourceLine" id="cb42-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb42-12" data-line-number="12">clasificacion_waterpolo <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-13" data-line-number="13"><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;table&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-14" data-line-number="14"><span class="st">  </span>.[[<span class="dv">2</span>]] <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-15" data-line-number="15"><span class="st">  </span><span class="kw">html_table</span>()</a></code></pre></div>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="kw">library</span>(rvest)</a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="co">#asigno un nombre a la URL de la página que me interesa</span></a>
+<a class="sourceLine" id="cb42-4" data-line-number="4">clasificacion_waterpolo &lt;-</a>
+<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="st">  </span><span class="kw">read_html</span>(<span class="st">&quot;https://www.aquatics.cat/competicio/informacioCompeticio/2017/228/97/0&quot;</span>)</a>
+<a class="sourceLine" id="cb42-6" data-line-number="6"><span class="co">#recupero la segunda tabla que aparece en esta página indicando &quot;.[[2]]&quot; en la expresión:</span></a>
+<a class="sourceLine" id="cb42-7" data-line-number="7">clasificacion_waterpolo <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-8" data-line-number="8"><span class="st">  </span><span class="kw">html_nodes</span>(<span class="st">&quot;table&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-9" data-line-number="9"><span class="st">  </span>.[[<span class="dv">2</span>]] <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb42-10" data-line-number="10"><span class="st">  </span><span class="kw">html_table</span>()</a></code></pre></div>
 <pre><code>##    CLASSIFICACIÓ             CLASSIFICACIÓ CLASSIFICACIÓ CLASSIFICACIÓ
 ## 1             NA                     Equip             P            PJ
 ## 2              1                 CN Mataró            37            13
@@ -402,20 +397,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb52-3" data-line-number="3"><span class="kw">print</span>(limpios)</a></code></pre></div>
 <pre><code>## [1] &quot;loquequiero&quot;</code></pre>
 <p>Otro paquete <strong>stringr</strong> <span class="citation">(Wickham <a href="#ref-R-stringr">2017</a><a href="#ref-R-stringr">b</a>)</span> es también útil para manipular textos; de modo similar me permite tomar sólo los últimos carácteres de algo:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">library</span> (stringr)</a></code></pre></div>
-<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.4.3</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">brutos &lt;-<span class="st"> &quot;smart&quot;</span></a>
-<a class="sourceLine" id="cb56-2" data-line-number="2">limpios &lt;-<span class="st"> </span><span class="kw">str_sub</span>(brutos,<span class="op">-</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="kw">print</span>(limpios)</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">library</span> (stringr)</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2">brutos &lt;-<span class="st"> &quot;smart&quot;</span></a>
+<a class="sourceLine" id="cb54-3" data-line-number="3">limpios &lt;-<span class="st"> </span><span class="kw">str_sub</span>(brutos,<span class="op">-</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="kw">print</span>(limpios)</a></code></pre></div>
 <pre><code>## [1] &quot;art&quot;</code></pre>
 <p>O extrer las palabras unidas por guiones bajos en una frase:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">frase &lt;-<span class="st"> &quot;el_último_de_la_fila&quot;</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"> <span class="kw">str_split</span>(frase, <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">frase &lt;-<span class="st"> &quot;el_último_de_la_fila&quot;</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"> <span class="kw">str_split</span>(frase, <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;el&quot;     &quot;último&quot; &quot;de&quot;     &quot;la&quot;     &quot;fila&quot;</code></pre>
 <p>O considerar los NA que aparecen a menudo en una tabla o un vector de textos como datos faltantes y reemplazarlos por carácteres (entrecomillados) sin eliminarlos:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;una_cosa&quot;</span>, <span class="ot">NA</span>, <span class="st">&quot;otra_cosa&quot;</span>)</a>
-<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="kw">str_replace_na</span>(vector)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;una_cosa&quot;</span>, <span class="ot">NA</span>, <span class="st">&quot;otra_cosa&quot;</span>)</a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">str_replace_na</span>(vector)</a></code></pre></div>
 <pre><code>## [1] &quot;una_cosa&quot;  &quot;NA&quot;        &quot;otra_cosa&quot;</code></pre>
 <p>Nota: Quizás lo estés pensando; pues sí, en R una misma cosa puede hacerse de muchos modos distintos y usando paquetes distintos. Hay algunas funciones comunes y paquetes muy usados -las que estamos tratando de mostrar aquí- pero existen innumerables funciones para resolver problemas similares y uno siempre encontrará un paquete que haga la misma cosa pero de otro modo.</p>
 

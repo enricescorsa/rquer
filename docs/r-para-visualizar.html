@@ -208,41 +208,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Una primera forma de visualización, útil en muchos casos son los <strong>gráficos de dispersión</strong> o <em>scatterplots</em> en inglés.
 Para generar muchos tipos de visualizaciones nos será sumamente útil el paquete <strong>ggplot2</strong> <span class="citation">(Wickham and Chang <a href="#ref-R-ggplot2">2016</a>)</span> creado por el señor <a href="http://hadley.nz/">Hadley Wickham</a>.
 Lo primero, cargémoslo:</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">library</span>(ggplot2) </a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">library</span>(ggplot2) </a></code></pre></div>
 <p>La opción más sencilla para visualizar nuestros datos es usar la función <code>qplot</code>
 dónde en los argumentos de la función pongo: la variable que quiero en el eje X, la que quiero en el eje Y, seguido de la tabla de los datos que estoy analizando (misdatos):</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos)</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-simpleqplot-1.png" width="672" /></p>
 <p>Puedo añadir una tercera variable (Nombre) para representarla por ejemplo mediante color:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos, <span class="dt">color =</span> Nombre)</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos, <span class="dt">color =</span> Nombre)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-qplotcolor-1.png" width="672" /></p>
 <p>(nótese que la leyenda se me crea automáticamente).</p>
 <p>Otra utilidad conveniente a menudo a la hora de visualizar nuestros datos es hacer varias capas o particiones ( <strong>facets</strong> ) para mostrar los datos en función de determinadas variables. Veámoslos por ejemplo en función del deporte practicado.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos, <span class="dt">color =</span> Nombre, <span class="dt">facets =</span> .<span class="op">~</span>Deporte)</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">qplot</span>(Cromos, Edad, <span class="dt">data =</span> misdatos, <span class="dt">color =</span> Nombre, <span class="dt">facets =</span> .<span class="op">~</span>Deporte)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-qplotfacet1-1.png" width="672" /></p>
 <p>La opción <code>qplot</code> está bien para generar visualizaciones rápidas de nuestros datos, pero cuando queremos tener más control estético podemos usar la expresión <code>ggplot</code> seguida de los datos y a continuación los parámetros estéticos que deseemos (que indicamos con <code>aes()</code>), más la forma (<code>geom</code>) de los datos (sean puntos, barras u otras formas).</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
-<a class="sourceLine" id="cb87-2" data-line-number="2">plot</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb79-2" data-line-number="2">plot</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-ggplotgeom-1.png" width="672" /></p>
 <p>Así, por ejemplo puedo añadir estética de color a los puntos, bien como una constante:</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;steelblue&quot;</span>)</a>
-<a class="sourceLine" id="cb88-2" data-line-number="2">plot</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;steelblue&quot;</span>)</a>
+<a class="sourceLine" id="cb80-2" data-line-number="2">plot</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-geomconstant-1.png" width="672" /></p>
 <p>o bien como una variable (dónde el color es función del Sexo):</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Sexo))</a>
-<a class="sourceLine" id="cb89-2" data-line-number="2">plot</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Sexo))</a>
+<a class="sourceLine" id="cb81-2" data-line-number="2">plot</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-geomvariable-1.png" width="672" /></p>
 <p>O el tamaño (size) es función del número de hermanos:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">size=</span>numerodehermanos))</a>
-<a class="sourceLine" id="cb90-2" data-line-number="2">plot</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">size =</span> numerodehermanos))</a>
+<a class="sourceLine" id="cb82-2" data-line-number="2">plot</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-geomvariablesize-1.png" width="672" /></p>
+<p>O ambos color y tamaño son función del sexo y del número de hermanos respectivamente y además la forma es función del Deporte practicado:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">plot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span> (Cromos, Edad)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Sexo, <span class="dt">size =</span> numerodehermanos, <span class="dt">shape =</span> Deporte))</a>
+<a class="sourceLine" id="cb83-2" data-line-number="2">plot</a></code></pre></div>
+<p><img src="bookdown-rquer_files/figure-html/chunk-geomvariablesizecolor-1.png" width="672" /></p>
 </div>
 <div id="histogramas" class="section level2">
 <h2><span class="header-section-number">5.2</span> Histogramas</h2>
 <p>Para representar un histograma simplemente usariamos en este caso en nuestra expresión la forma estética <code>geom_histogram</code>.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb91-2" data-line-number="2"><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span>(numerodehermanos)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">.5</span>, <span class="dt">fill =</span> <span class="st">&quot;Steelblue&quot;</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb84-2" data-line-number="2"><span class="kw">ggplot</span>(misdatos, <span class="kw">aes</span>(numerodehermanos)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb84-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">.5</span>, <span class="dt">fill =</span> <span class="st">&quot;Steelblue&quot;</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-histogram-1.png" width="672" /></p>
 <p>Nótese que a efectos estéticos hemos representado el histograma ajustando el ancho de las barras (con <code>binwidth</code>) y rellendando de color (con <code>fill</code>).</p>
 </div>
@@ -251,23 +255,23 @@ dónde en los argumentos de la función pongo: la variable que quiero en el eje 
 <p>Eventualmente puede ser interesante visualizar datos que describen una red y percibir su estructura relacional.</p>
 <p>Con el paquete <strong>igraph</strong> <span class="citation">(file. <a href="#ref-R-igraph">2017</a>)</span> podemos leer una red cuya información tengamos expresada en forma de nodos y enlaces.</p>
 <p>En nuestro caso partimos de un arxivo de nodos que es una tabla de nombres de personas y un archivo de enlaces que es una tabla con tres columnas (nombre de una persona, nombre de otra persona con quien interacciona y número de cromos intercambiados).</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="co">#cargamos el paquete igraph</span></a>
-<a class="sourceLine" id="cb92-2" data-line-number="2"><span class="kw">library</span>(igraph)</a>
-<a class="sourceLine" id="cb92-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb92-4" data-line-number="4"><span class="co">#leemos archivos de nodos y de enlaces que tenemos en nuestro directorio</span></a>
-<a class="sourceLine" id="cb92-5" data-line-number="5">nodos &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_bookdown_files/grafo_nodos.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">as.is =</span> T)</a>
-<a class="sourceLine" id="cb92-6" data-line-number="6">enlaces &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_bookdown_files/grafo_enlaces.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">as.is =</span> T)</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="co">#cargamos el paquete igraph</span></a>
+<a class="sourceLine" id="cb85-2" data-line-number="2"><span class="kw">library</span>(igraph)</a>
+<a class="sourceLine" id="cb85-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb85-4" data-line-number="4"><span class="co">#leemos archivos de nodos y de enlaces que tenemos en nuestro directorio</span></a>
+<a class="sourceLine" id="cb85-5" data-line-number="5">nodos &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_bookdown_files/grafo_nodos.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">as.is =</span> T)</a>
+<a class="sourceLine" id="cb85-6" data-line-number="6">enlaces &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_bookdown_files/grafo_enlaces.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">as.is =</span> T)</a></code></pre></div>
 <p>Ahora podemos visualizar la red con el paquete <code>igraph</code>.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="co">#trasformamos los datos en objetos de red mediante la función graph.data.frame</span></a>
-<a class="sourceLine" id="cb93-2" data-line-number="2">red &lt;-<span class="kw">graph.data.frame</span>(enlaces, <span class="dt">directed =</span> <span class="ot">TRUE</span>, <span class="dt">vertices =</span> nodos)</a>
-<a class="sourceLine" id="cb93-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb93-4" data-line-number="4"><span class="co">#representamos el grafo especificando varios criterios estéticos</span></a>
-<a class="sourceLine" id="cb93-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb93-6" data-line-number="6"><span class="kw">plot</span>(red, <span class="dt">layout =</span> layout.fruchterman.reingold, <span class="dt">vertex.size =</span> <span class="dv">9</span>, </a>
-<a class="sourceLine" id="cb93-7" data-line-number="7">     <span class="dt">vertex.label.color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="dt">vertex.label.dist =</span> <span class="fl">0.9</span>, </a>
-<a class="sourceLine" id="cb93-8" data-line-number="8">     <span class="dt">vertex.color =</span> <span class="st">&quot;Steelblue&quot;</span>, <span class="dt">vertex.frame.color =</span> <span class="st">&quot;white&quot;</span>, </a>
-<a class="sourceLine" id="cb93-9" data-line-number="9">     <span class="dt">edge.arrow.size =</span> <span class="fl">0.5</span>, <span class="dt">edge.curved =</span> <span class="dv">0</span>, <span class="dt">vertex.label.font =</span> <span class="dv">9</span>, </a>
-<a class="sourceLine" id="cb93-10" data-line-number="10">     <span class="dt">vertex.label.cex =</span> <span class="fl">0.8</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="co">#trasformamos los datos en objetos de red mediante la función graph.data.frame</span></a>
+<a class="sourceLine" id="cb86-2" data-line-number="2">red &lt;-<span class="st"> </span><span class="kw">graph.data.frame</span>(enlaces, <span class="dt">directed =</span> <span class="ot">TRUE</span>, <span class="dt">vertices =</span> nodos)</a>
+<a class="sourceLine" id="cb86-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb86-4" data-line-number="4"><span class="co">#representamos el grafo especificando varios criterios estéticos</span></a>
+<a class="sourceLine" id="cb86-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb86-6" data-line-number="6"><span class="kw">plot</span>(red, <span class="dt">layout =</span> layout.fruchterman.reingold, <span class="dt">vertex.size =</span> <span class="dv">9</span>, </a>
+<a class="sourceLine" id="cb86-7" data-line-number="7">     <span class="dt">vertex.label.color =</span> <span class="st">&quot;grey20&quot;</span>, <span class="dt">vertex.label.dist =</span> <span class="fl">0.9</span>, </a>
+<a class="sourceLine" id="cb86-8" data-line-number="8">     <span class="dt">vertex.color =</span> <span class="st">&quot;Steelblue&quot;</span>, <span class="dt">vertex.frame.color =</span> <span class="st">&quot;white&quot;</span>, </a>
+<a class="sourceLine" id="cb86-9" data-line-number="9">     <span class="dt">edge.arrow.size =</span> <span class="fl">0.5</span>, <span class="dt">edge.curved =</span> <span class="dv">0</span>, <span class="dt">vertex.label.font =</span> <span class="dv">9</span>, </a>
+<a class="sourceLine" id="cb86-10" data-line-number="10">     <span class="dt">vertex.label.cex =</span> <span class="fl">0.8</span>)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-plotnetwork-1.png" width="672" /></p>
 <p>Apreciamos un grafo resultante cuyos nodos son los nombres de las personas y los enlaces los vínculos que éstas establecen (en este caso intercambio de cromos).</p>
 <p>Podemos llegar a hacer grafos mucho más sofisticados que este: reflejar varias variables en ellos, distintos layouts, aplicar conceptos de la teoría de grafos (centralidad, cercanía, intermediacion) para entenderlos mejor, etc.</p>
@@ -277,52 +281,52 @@ dónde en los argumentos de la función pongo: la variable que quiero en el eje 
 <h2><span class="header-section-number">5.4</span> Mapas geográficos</h2>
 <p>También podemos representar en R mapas geográficos de varios modos; usamos paquetes como <strong>ggmap</strong> <span class="citation">(Kahle and Wickham <a href="#ref-R-ggmap">2016</a>)</span>, <strong>tmap</strong> <span class="citation">(Tennekes <a href="#ref-R-tmap">2017</a>)</span> para representar los mapas y luego con paquetes como por ejemplo <strong>rgdal</strong> <span class="citation">(Bivand, Keitt, and Rowlingson <a href="#ref-R-rgdal">2017</a>)</span> podemos importar perímetros geoespaciales de áreas geográficas o países (en forma de <em>shapefiles</em>) en R y localizarlos en el mapa con nuestros datos.</p>
 <p>Por ejemplo, podemos generar rápidamente un mapa de Europa con <code>tmap</code> con sólo indicar una región geográfica:</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="kw">library</span>(tmap)</a>
-<a class="sourceLine" id="cb94-2" data-line-number="2"><span class="co">#el paquete contiene una tabla con datos de los países europeos </span></a>
-<a class="sourceLine" id="cb94-3" data-line-number="3"><span class="kw">data</span>(Europe)</a>
-<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="kw">qtm</span>(Europe)</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">library</span>(tmap)</a>
+<a class="sourceLine" id="cb87-2" data-line-number="2"><span class="co">#el paquete contiene una tabla con datos de los países europeos </span></a>
+<a class="sourceLine" id="cb87-3" data-line-number="3"><span class="kw">data</span>(Europe)</a>
+<a class="sourceLine" id="cb87-4" data-line-number="4"><span class="kw">qtm</span>(Europe)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-tmapeurope-1.png" width="672" /></p>
 <p>Alternativamente, con <code>ggmap</code> podríamos generar el mapa de una localización específica del siguiente modo:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="kw">library</span>(ggmap)</a>
-<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="co">#localizamos con longitud y latitud la zona que queremos</span></a>
-<a class="sourceLine" id="cb95-3" data-line-number="3">cat &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">lon =</span> <span class="fl">1.6430518</span>, <span class="dt">lat =</span> <span class="fl">41.6960344</span>)</a>
-<a class="sourceLine" id="cb95-4" data-line-number="4"><span class="co">#generamos el mapa indicando la fuente (google) y el zoom que queremos</span></a>
-<a class="sourceLine" id="cb95-5" data-line-number="5">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> cat, <span class="dt">source =</span> <span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb95-6" data-line-number="6"><span class="kw">ggmap</span>(map)</a></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="kw">library</span>(ggmap)</a>
+<a class="sourceLine" id="cb88-2" data-line-number="2"><span class="co">#localizamos con longitud y latitud la zona que queremos</span></a>
+<a class="sourceLine" id="cb88-3" data-line-number="3">cat &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">lon =</span> <span class="fl">1.6430518</span>, <span class="dt">lat =</span> <span class="fl">41.6960344</span>)</a>
+<a class="sourceLine" id="cb88-4" data-line-number="4"><span class="co">#generamos el mapa indicando la fuente (google) y el zoom que queremos</span></a>
+<a class="sourceLine" id="cb88-5" data-line-number="5">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> cat, <span class="dt">source =</span> <span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb88-6" data-line-number="6"><span class="kw">ggmap</span>(map)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-ggmap-1.png" width="672" /></p>
 <p>Si quisieramos otro tipo de representación (maptype) y color (por ejemplo en blanco y negro) indicaríamos:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="co">#el tipo de mapa de google puede ser “roadmap”, “terrain”, “satellite” o “hybrid”</span></a>
-<a class="sourceLine" id="cb96-2" data-line-number="2">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> cat, <span class="dt">source =</span> <span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">8</span>, <span class="dt">maptype =</span> <span class="st">&quot;roadmap&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;bw&quot;</span>)</a>
-<a class="sourceLine" id="cb96-3" data-line-number="3"><span class="kw">ggmap</span>(map)</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="co">#el tipo de mapa de google puede ser “roadmap”, “terrain”, “satellite” o “hybrid”</span></a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> cat, <span class="dt">source =</span> <span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">8</span>, <span class="dt">maptype =</span> <span class="st">&quot;roadmap&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;bw&quot;</span>)</a>
+<a class="sourceLine" id="cb89-3" data-line-number="3"><span class="kw">ggmap</span>(map)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-ggmapbw-1.png" width="672" /></p>
 <p>Si ahora quiero añadir un punto en el mapa (por ejemplo mi ciudad, Barcelona):</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="co">#añado la long/lat de Barcelona</span></a>
-<a class="sourceLine" id="cb97-2" data-line-number="2"><span class="kw">ggmap</span>(map) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span> (<span class="kw">aes</span> (<span class="dt">x =</span> <span class="fl">2.1734</span>, <span class="dt">y =</span> <span class="fl">41.3851</span>),  </a>
-<a class="sourceLine" id="cb97-3" data-line-number="3">                         </a>
-<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="co">#e indico la transparencia (alpha), color y tamaño del punto</span></a>
-<a class="sourceLine" id="cb97-5" data-line-number="5"><span class="dt">alpha =</span> <span class="fl">.3</span>, <span class="dt">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="co">#añado la long/lat de Barcelona</span></a>
+<a class="sourceLine" id="cb90-2" data-line-number="2"><span class="kw">ggmap</span>(map) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span> (<span class="kw">aes</span> (<span class="dt">x =</span> <span class="fl">2.1734</span>, <span class="dt">y =</span> <span class="fl">41.3851</span>),  </a>
+<a class="sourceLine" id="cb90-3" data-line-number="3">                         </a>
+<a class="sourceLine" id="cb90-4" data-line-number="4"><span class="co">#e indico la transparencia (alpha), color y tamaño del punto</span></a>
+<a class="sourceLine" id="cb90-5" data-line-number="5"><span class="dt">alpha =</span> <span class="fl">.3</span>, <span class="dt">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-ggmapbcn-1.png" width="672" /></p>
 <p>Incluso puedo añadir datos al mapa; por ejemplo, los distritos de la ciudad:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="co">#primero encuentro las shapefiles de los distritos de Barcelona en datos abiertos:</span></a>
-<a class="sourceLine" id="cb98-2" data-line-number="2"><span class="co">#https://laura-an.carto.com/tables/shapefile_distrito_barcelona/public</span></a>
-<a class="sourceLine" id="cb98-3" data-line-number="3"><span class="co">#me las descargo en mi directorio de trabajo</span></a>
-<a class="sourceLine" id="cb98-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb98-5" data-line-number="5"><span class="co">#focalizo el mapa en Barcelona</span></a>
-<a class="sourceLine" id="cb98-6" data-line-number="6">bcn &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">lon =</span> <span class="fl">2.1734</span>, <span class="dt">lat =</span> <span class="fl">41.3851</span>)</a>
-<a class="sourceLine" id="cb98-7" data-line-number="7">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> bcn, <span class="dt">source=</span><span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">11</span>, <span class="dt">maptype =</span> <span class="st">&quot;roadmap&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;bw&quot;</span>)</a>
-<a class="sourceLine" id="cb98-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb98-9" data-line-number="9"><span class="co">#cargo el paquete rgdal para importar las shapefiles de los distritos al mapa</span></a>
-<a class="sourceLine" id="cb98-10" data-line-number="10"><span class="kw">library</span>(rgdal)</a>
-<a class="sourceLine" id="cb98-11" data-line-number="11">shapefiles&lt;-<span class="kw">readOGR</span>(<span class="dt">dsn =</span> <span class="st">&quot;_bookdown_files/shapefile_distrito_barcelona.shp&quot;</span>,</a>
-<a class="sourceLine" id="cb98-12" data-line-number="12">                    <span class="dt">layer =</span> <span class="st">&quot;shapefile_distrito_barcelona&quot;</span>) </a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="co">#primero encuentro las shapefiles de los distritos de Barcelona en datos abiertos:</span></a>
+<a class="sourceLine" id="cb91-2" data-line-number="2"><span class="co">#https://laura-an.carto.com/tables/shapefile_distrito_barcelona/public</span></a>
+<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="co">#me las descargo en mi directorio de trabajo</span></a>
+<a class="sourceLine" id="cb91-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb91-5" data-line-number="5"><span class="co">#focalizo el mapa en Barcelona</span></a>
+<a class="sourceLine" id="cb91-6" data-line-number="6">bcn &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">lon =</span> <span class="fl">2.1734</span>, <span class="dt">lat =</span> <span class="fl">41.3851</span>)</a>
+<a class="sourceLine" id="cb91-7" data-line-number="7">map &lt;-<span class="st"> </span><span class="kw">get_map</span>(<span class="dt">location =</span> bcn, <span class="dt">source=</span><span class="st">&quot;google&quot;</span>, <span class="dt">zoom =</span> <span class="dv">11</span>, <span class="dt">maptype =</span> <span class="st">&quot;roadmap&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;bw&quot;</span>)</a>
+<a class="sourceLine" id="cb91-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb91-9" data-line-number="9"><span class="co">#cargo el paquete rgdal para importar las shapefiles de los distritos al mapa</span></a>
+<a class="sourceLine" id="cb91-10" data-line-number="10"><span class="kw">library</span>(rgdal)</a>
+<a class="sourceLine" id="cb91-11" data-line-number="11">shapefiles &lt;-<span class="st"> </span><span class="kw">readOGR</span>(<span class="dt">dsn =</span> <span class="st">&quot;_bookdown_files/shapefile_distrito_barcelona.shp&quot;</span>,</a>
+<a class="sourceLine" id="cb91-12" data-line-number="12">                    <span class="dt">layer =</span> <span class="st">&quot;shapefile_distrito_barcelona&quot;</span>) </a></code></pre></div>
 <pre><code>## OGR data source with driver: ESRI Shapefile 
 ## Source: &quot;_bookdown_files/shapefile_distrito_barcelona.shp&quot;, layer: &quot;shapefile_distrito_barcelona&quot;
 ## with 10 features
 ## It has 12 fields</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="co">#lo represento en el mapa:</span></a>
-<a class="sourceLine" id="cb100-2" data-line-number="2"><span class="kw">ggmap</span>(map) <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group=</span>id), </a>
-<a class="sourceLine" id="cb100-3" data-line-number="3"><span class="dt">data =</span> shapefiles, <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;orange&quot;</span>, </a>
-<a class="sourceLine" id="cb100-4" data-line-number="4"><span class="dt">alpha =</span> <span class="fl">.3</span>, <span class="dt">size =</span> <span class="fl">.2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="co">#lo represento en el mapa:</span></a>
+<a class="sourceLine" id="cb93-2" data-line-number="2"><span class="kw">ggmap</span>(map) <span class="op">+</span><span class="st"> </span><span class="kw">geom_polygon</span>(<span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group=</span>id), </a>
+<a class="sourceLine" id="cb93-3" data-line-number="3"><span class="dt">data =</span> shapefiles, <span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;orange&quot;</span>, </a>
+<a class="sourceLine" id="cb93-4" data-line-number="4"><span class="dt">alpha =</span> <span class="fl">.3</span>, <span class="dt">size =</span> <span class="fl">.2</span>)</a></code></pre></div>
 <p><img src="bookdown-rquer_files/figure-html/chunk-bcnshp-1.png" width="672" /></p>
 
 </div>
